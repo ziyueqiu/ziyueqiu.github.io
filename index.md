@@ -1,5 +1,7 @@
 ## Welcome to Ziyue Qiu's Home Page
 
+<img src=".\pics\photo.jpeg" align='left' alt="photo" style="zoom:33%;" />
+
 Email: qiuziyue@mail.ustc.edu.cn
 
 Address: University of Science and Technology of China, No.96, JinZhai Road Baohe District, Hefei, Anhui, 230026,P.R.China
@@ -47,33 +49,35 @@ Advisor: **[Kai Xing](http://staff.ustc.edu.cn/~kxing/)** (Associate Professor o
 
 ### Leadership & Activities
 
-<p style="text-align:left;"><strong>Football Team, School of Gifted Young, USTC | Manager</strong><span style="float:right;">Oct 2018 - Oct 2019</span></p>
+<p style="text-align:left;"><strong>Microsoft Research Asia Intern </strong><span style="float:right;">Jul 2021 - present</span></p>
+
+<p style="text-align:left;"><strong>Teaching Assistant of Mathematical Logic Course </strong><span style="float:right;">Mar 2021 – Jul 2021</span></p>
+
+- An important mathematical foundation course for undergraduates in Computer Science (CS).
+
+<p style="text-align:left;"><strong>Linux User Group @ USTC | vice president & CFO</strong><span style="float:right;">Sep 2020 – Jul 2021</span></p>
+
+<p style="text-align:left;"><strong>Debate Team, School of Gifted Young, USTC | Leader</strong><span style="float:right;">Jun 2019 - May 2020</span></p>
+
+- Led the team to achieve Top Eight in School Debate Competition.
+
+<p style="text-align:left;"><strong>University of Texas at Austin International Academy Program</strong><span style="float:right;">Jul 2019 - Aug 2019</span></p>
 
 <p style="text-align:left;"><strong>Campus propaganda in high school for USTC | Speaker</strong><span style="float:right;">Dec 2018</span></p>
 
 - Selected from hundreds of students to introduce USTC to own high school.
 - Organized the whole propaganda (100+ students attended) and won acclaim.
 
-<p style="text-align:left;"><strong>University of Texas at Austin International Academy Program</strong><span style="float:right;">Jul 2019 - Aug 2019</span></p>
-
-<p style="text-align:left;"><strong>Debate Team, School of Gifted Young, USTC | Leader</strong><span style="float:right;">Jun 2019 - May 2020</span></p>
-
-- Led the team to achieve Top Eight in School Debate Competition.
-
-<p style="text-align:left;"><strong>Linux User Group @ USTC | vice president & CFO</strong><span style="float:right;">Sep 2020 – Jul 2021</span></p>
-
-<p style="text-align:left;"><strong>Teaching Assistant of Mathematical Logic Course </strong><span style="float:right;">Mar 2021 – Jul 2021</span></p>
-
-- An important mathematical foundation course for undergraduates in Computer Science (CS).
+<p style="text-align:left;"><strong>Football Team, School of Gifted Young, USTC | Manager</strong><span style="float:right;">Oct 2018 - Oct 2019</span></p>
 
 ### Awards & Honors
 
-<p style="text-align:left;">Alumni Scholarship of School of Gifted Young, USTC (10/1000+)<span style="float:right;">2019</span></p>
-<p style="text-align:left;">Chen Guoliang Academician Scholarship (Top 10%)<span style="float:right;">2019</span></p>
+<p style="text-align:left;">National Scholarship in School of the Gifted Young, USTC (Top 2%) <a href="http://stuhome.ustc.edu.cn/2021/1019/c2316a526085/pagem.htm">[report]</a><span style="float:right;">2021</span></p>
 <p style="text-align:left;">Sihua Scholarship for Gifted Young (4/50)<span style="float:right;">2020</span></p>
 <p style="text-align:left;">Hua Xia Talent Program First Prize Scholarship (12/250 students major in Computer Science)<span style="float:right;">2020</span></p>
 <p style="text-align:left;">Zhong Hai Memorial Scholarship (2/200+) <a href="https://www.ustcif.org.cn/default.php/content/4674/">[report]</a><span style="float:right;">2020</span></p>
-<p style="text-align:left;">National Scholarship in School of the Gifted Young, USTC (Top 2%) <a href="http://stuhome.ustc.edu.cn/2021/1019/c2316a526085/pagem.htm">[report]</a><span style="float:right;">2021</span></p>
+<p style="text-align:left;">Alumni Scholarship of School of Gifted Young, USTC (10/1000+)<span style="float:right;">2019</span></p>
+<p style="text-align:left;">Chen Guoliang Academician Scholarship (Top 10%)<span style="float:right;">2019</span></p>
 
 ### Skills
 
