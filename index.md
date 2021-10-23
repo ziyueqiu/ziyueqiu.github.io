@@ -8,6 +8,10 @@ Address: University of Science and Technology of China, No.96, JinZhai Road Baoh
 
 Github: [USTCqzy](https://github.com/USTCqzy)
 
+### Biography
+
+I am a senior student at Department of Computer Science and Technology. I am advised by Prof. **[Cheng Li](http://staff.ustc.edu.cn/~chengli7/)** at USTC, Prof. **[Xiaosong Ma](https://www.hbku.edu.qa/en/staff/dr-xiaosong-ma)** at HKBU, Dr. **[Qi Chen](https://www.microsoft.com/en-us/research/people/cheqi/)**, Dr. **[Mao Yang](https://www.microsoft.com/en-us/research/people/maoyang/)** at MSR-Asia. I am interested in storage systems, operating systems and distributed systems.
+
 ### Education
 
 <p style="text-align:left;"><strong><a href="http://en.ustc.edu.cn/">University of Science and Technology of China (USTC)</a></strong><span style="float:right;">Sep 2018 - present</span></p>
@@ -25,6 +29,8 @@ GPA (overall): **3.92/4.3 (90.7/100)**, ranking: **9/252 (Top 4% in all students
 ### Research Experiences
 
 <p style="text-align:left;"><strong>Undergraduate Researcher, <a href="http://adsl.ustc.edu.cn/">Advanced Data Systems Laboratory (ADSL)</a>, USTC</strong><span style="float:right;">Jan 2021 - present</span></p>
+
+<p style="text-align:left;"><strong>Research Intern, <a href="https://www.microsoft.com/en-us/research/group/systems-research-group-asia/">System Group</a>, Microsoft Research Asia</strong><span style="float:right;">Jul 2021 - present</span></p>
 
 ***Fasting Caching***
 
@@ -48,8 +54,6 @@ Advisor: **[Kai Xing](http://staff.ustc.edu.cn/~kxing/)** (Associate Professor o
 - Used Reed-Solomon Erasure Coding in Go and compiled it into WebAssembly for higher performance.
 
 ### Leadership & Activities
-
-<p style="text-align:left;"><strong>Microsoft Research Asia Intern </strong><span style="float:right;">Jul 2021 - present</span></p>
 
 <p style="text-align:left;"><strong>Teaching Assistant of Mathematical Logic Course </strong><span style="float:right;">Mar 2021 – Jul 2021</span></p>
 
@@ -81,13 +85,13 @@ Advisor: **[Kai Xing](http://staff.ustc.edu.cn/~kxing/)** (Associate Professor o
 
 ### Skills
 
-Computer Skills
+**Computer Skills**
 
 - Proficient in programming in Linux (Ubuntu) / Mac OS environment (3-year experience)
 - Adept in Assembly Language, C/C++, Python, Verilog (3-year experience),
 - Proficient in Java, JavaScript
 
-Language
+**Language**
 
 - **GRE General Test** Verbal 161 (88%), Quantitative 170 (96%), Analytical Writing 3.5 (38%) 
 - **TOEFL iBT 110** (Reading 30, Listening 29, Speaking 23, Writing 28)
