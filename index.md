@@ -1,6 +1,6 @@
 ## Welcome to Ziyue Qiu's Home Page
 
-<img src=".\pics\photo.jpeg" align='left' alt="photo" style="zoom:33%;" />
+<img src=".\pics\photo.jpeg" alt="photo" style="zoom:33%;" />
 
 Email: qiuziyue@mail.ustc.edu.cn
 
