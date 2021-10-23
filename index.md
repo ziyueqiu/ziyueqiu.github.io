@@ -6,7 +6,7 @@ Address: University of Science and Technology of China, No.96, JinZhai Road Baoh
 
 ### Education
 
-<p style="text-align:left;"><b>University of Science and Technology of China (USTC)</b><span style="float:right;">Sep 2018 - present</span></p>
+<p style="text-align:left;"><b><a href="http://en.ustc.edu.cn/">University of Science and Technology of China (USTC)</a></b><span style="float:right;">Sep 2018 - present</span></p>
 
 Bachelor of Engineering, **Special Class for the Gifted Young**, Major in Computer Science and Technology (expected in Jul 2022)
 
@@ -20,12 +20,70 @@ GPA (overall): **3.92/4.3 (90.7/100)**, ranking: **9/252 (Top 4% in all students
 
 ### Research Experiences
 
-<p style="text-align:left;"><b>Undergraduate Researcher, Advanced Data Systems Laboratory (ADSL), USTC</b><span style="float:right;">Jan 2021 - present</span></p>
+<p style="text-align:left;"><b>Undergraduate Researcher, <a href="http://adsl.ustc.edu.cn/">Advanced Data Systems Laboratory (ADSL)</a>, USTC</b><span style="float:right;">Jan 2021 - present</span></p>
 
-*Fasting Caching*
+***Fasting Caching***
 
-Advisor: **Cheng Li** (Research Professor of Computer Science Department, USTC), **Xiaosong Ma** (Senior Scientist, Qatar  Computing Research Institute, HBKU), **Qi Chen** (Microsoft Research Asia), **Mao Yang** (Microsoft Research Asia), **Lidong Zhou** (Microsoft Research Asia)
+Advisor: **[Cheng Li](http://staff.ustc.edu.cn/~chengli7/)** (Research Professor of Computer Science Department, USTC), **[Xiaosong Ma](https://www.hbku.edu.qa/en/staff/dr-xiaosong-ma)** (Senior Scientist, Qatar  Computing Research Institute, HBKU), **[Qi Chen](https://www.microsoft.com/en-us/research/people/cheqi/)** (Microsoft Research Asia), **[Mao Yang](https://www.microsoft.com/en-us/research/people/maoyang/)** (Microsoft Research Asia), **[Lidong Zhou](https://www.microsoft.com/en-us/research/people/lidongz/)** (Microsoft Research Asia)
 
 - Examined lock contention problems and improved scalability in all caching situations (not on any specific cache  algorithm).
 - Preparing a **first-author** submission to **OSDI'22**.
+
+<p style="text-align:left;"><i><b><a hrep="https://gitee.com/RubyOcelot/ustc-compile-2020/tree/master/mlir-toy-new">Research on MLIR Toy</a></b></i><span style="float:right;">Dec 2020 - Jan 2021</span></p>
+
+Advisor: **[Yu Zhang](http://staff.ustc.edu.cn/~yuzhang/)** (Associate Professor of Computer Science Department, USTC)
+
+- Implemented a pass lowing Toy Dialect to Linalg Dialect and added useful operators.
+- Lowered Linalg Dialect to GPU Dialect and openMP.
+
+<p style="text-align:left;"><i><b><a href="https://github.com/OSH-2020/x-dontpanic">Distributed File Systems based on Internet Pages</a></b></i><span style="float:right;">Feb 2020 - Jun 2020</span></p>
+
+Advisor: **[Kai Xing](http://staff.ustc.edu.cn/~kxing/)** (Associate Professor of Computer Science Department, USTC) 
+
+- Implemented a decentralized server for higher availability and containerized it by Docker.
+- Used Reed-Solomon Erasure Coding in Go and compiled it into WebAssembly for higher performance.
+
+### Leadership & Activities
+
+<p style="text-align:left;"><b>Football Team, School of Gifted Young, USTC | Manager</b><span style="float:right;">Oct 2018 - Oct 2019</span></p>
+
+<p style="text-align:left;"><b>Campus propaganda in high school for USTC | Speaker</b><span style="float:right;">Dec 2018</span></p>
+
+- Selected from hundreds of students to introduce USTC to own high school.
+- Organized the whole propaganda (100+ students attended) and won acclaim.
+
+<p style="text-align:left;"><b>University of Texas at Austin International Academy Program</b><span style="float:right;">Jul 2019 - Aug 2019</span></p>
+
+<p style="text-align:left;"><b>Debate Team, School of Gifted Young, USTC | Leader</b><span style="float:right;">Jun 2019 - May 2020</span></p>
+
+- Led the team to achieve Top Eight in School Debate Competition.
+
+<p style="text-align:left;"><b>Linux User Group @ USTC | vice president & CFO</b><span style="float:right;">Sep 2020 – Jul 2021</span></p>
+
+<p style="text-align:left;"><b>Teaching Assistant of Mathematical Logic Course </b><span style="float:right;">Mar 2021 – Jul 2021</span></p>
+
+- An important mathematical foundation course for undergraduates in Computer Science (CS).
+
+### Awards & Honors
+
+<p style="text-align:left;">Alumni Scholarship of School of Gifted Young, USTC (10/1000+)<span style="float:right;">2019</span></p>
+<p style="text-align:left;">Chen Guoliang Academician Scholarship (Top 10%)<span style="float:right;">2019</span></p>
+<p style="text-align:left;">Sihua Scholarship for Gifted Young (4/50)<span style="float:right;">2020</span></p>
+<p style="text-align:left;">Hua Xia Talent Program First Prize Scholarship (12/250 students major in Computer Science)<span style="float:right;">2020</span></p>
+<p style="text-align:left;">Zhong Hai Memorial Scholarship (2/200+) <a href="https://www.ustcif.org.cn/default.php/content/4674/">[report]</a><span style="float:right;">2020</span></p>
+<p style="text-align:left;">National Scholarship in School of the Gifted Young, USTC (Top 2%) <a href="http://stuhome.ustc.edu.cn/2021/1019/c2316a526085/pagem.htm">[report]</a><span style="float:right;">2021</span></p>
+
+### Skills
+
+Computer Skills
+
+- Proficient in programming in Linux (Ubuntu) / Mac OS environment (3-year experience)
+- Adept in Assembly Language, C/C++, Python, Verilog (3-year experience),
+- Proficient in Java, JavaScript
+
+Language
+
+- **GRE General Test** Verbal 161 (88%), Quantitative 170 (96%), Analytical Writing 3.5 (38%) 
+- **TOEFL iBT 110** (Reading 30, Listening 29, Speaking 23, Writing 28)
+- **Other Languages:** Mandarin (native)
 
