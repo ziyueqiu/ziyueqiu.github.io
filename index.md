@@ -4,6 +4,8 @@ Email: qiuziyue@mail.ustc.edu.cn
 
 Address: University of Science and Technology of China, No.96, JinZhai Road Baohe District, Hefei, Anhui, 230026,P.R.China
 
+Github: [USTCqzy](https://github.com/USTCqzy)
+
 ### Education
 
 <p style="text-align:left;"><strong><a href="http://en.ustc.edu.cn/">University of Science and Technology of China (USTC)</a></strong><span style="float:right;">Sep 2018 - present</span></p>
