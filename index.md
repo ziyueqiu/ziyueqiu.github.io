@@ -29,7 +29,7 @@ Advisor: **[Cheng Li](http://staff.ustc.edu.cn/~chengli7/)** (Research Professor
 - Examined lock contention problems and improved scalability in all caching situations (not on any specific cache  algorithm).
 - Preparing a **first-author** submission to **OSDI'22**.
 
-<p style="text-align:left;"><i><b><a hrep="https://gitee.com/RubyOcelot/ustc-compile-2020/tree/master/mlir-toy-new">Research on MLIR Toy</a></b></i><span style="float:right;">Dec 2020 - Jan 2021</span></p>
+<p style="text-align:left;"><i><b><a href="https://gitee.com/RubyOcelot/ustc-compile-2020/tree/master/mlir-toy-new">Research on MLIR Toy</a></b></i><span style="float:right;">Dec 2020 - Jan 2021</span></p>
 
 Advisor: **[Yu Zhang](http://staff.ustc.edu.cn/~yuzhang/)** (Associate Professor of Computer Science Department, USTC)
 
@@ -45,7 +45,7 @@ Advisor: **[Kai Xing](http://staff.ustc.edu.cn/~kxing/)** (Associate Professor o
 
 ### Leadership & Activities
 
-<p style="text-align:left;"><b>Football Team, School of Gifted Young, USTC | Manager</b><span style="float:right;">Oct 2018 - Oct 2019</span></p>
+<p style="text-align:left;"><strong>Football Team, School of Gifted Young, USTC | Manager</strong><span style="float:right;">Oct 2018 - Oct 2019</span></p>
 
 <p style="text-align:left;"><b>Campus propaganda in high school for USTC | Speaker</b><span style="float:right;">Dec 2018</span></p>
 
