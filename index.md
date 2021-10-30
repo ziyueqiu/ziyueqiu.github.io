@@ -16,7 +16,7 @@ Github: [USTCqzy](https://github.com/USTCqzy)
 
 <p style="text-align:left;"><strong><a href="http://en.ustc.edu.cn/">University of Science and Technology of China (USTC)</a></strong><span style="float:right;">Sep 2018 - present</span></p>
 
-- Bachelor of Engineering, **Special Class for the Gifted Young**, Major in Computer Science and Technology (expected in Jul 2022)
+- Bachelor of Engineering, **Special Class for the Gifted Young (under 16 years old)**, Major in Computer Science and Technology (expected in Jul 2022)
 
 - **Hua Xia Talent Program** in Computer Science and Technology (25 students selected from all 1,800 entering in 2018)
 
@@ -59,7 +59,20 @@ Advisor: **[Kai Xing](http://staff.ustc.edu.cn/~kxing/)** (Associate Professor o
 
 - An important mathematical foundation course for undergraduates in Computer Science (CS).
 
+<p style="text-align:left;"><strong>Ultimate Frisbee Team @ USTC | CFO & Core Member</strong><span style="float:right;">Oct 2020 - present</span></p>
+
+
+
+- Kept the accounts.
+
+-  Joined competitions including Luzhou Hat 2020, Tianjing Open 2021, Beiyu Jumble 2021.
+
 <p style="text-align:left;"><strong>Linux User Group @ USTC | vice president & CFO</strong><span style="float:right;">Sep 2020 – Jul 2021</span></p>
+
+[photos](#jump)
+
+- Kept the accounts.
+- Organized activities (Hackergame got more participants, growing from 2682 in 2019 to 3733 in 2020)
 
 <p style="text-align:left;"><strong>Debate Team, School of Gifted Young, USTC | Leader</strong><span style="float:right;">Jun 2019 - May 2020</span></p>
 
@@ -67,12 +80,16 @@ Advisor: **[Kai Xing](http://staff.ustc.edu.cn/~kxing/)** (Associate Professor o
 
 <p style="text-align:left;"><strong>University of Texas at Austin International Academy Program</strong><span style="float:right;">Jul 2019 - Aug 2019</span></p>
 
+- Studyed listening, writing and computer course for four weeks.
+
 <p style="text-align:left;"><strong>Campus propaganda in high school for USTC | Speaker</strong><span style="float:right;">Dec 2018</span></p>
 
 - Selected from hundreds of students to introduce USTC to own high school.
 - Organized the whole propaganda (100+ students attended) and won acclaim.
 
 <p style="text-align:left;"><strong>Football Team, School of Gifted Young, USTC | Manager</strong><span style="float:right;">Oct 2018 - Oct 2019</span></p>
+
+- Kept the accounts.
 
 ### Awards & Honors
 
@@ -96,4 +113,6 @@ Advisor: **[Kai Xing](http://staff.ustc.edu.cn/~kxing/)** (Associate Professor o
 - **GRE General Test** Verbal 161 (88%), Quantitative 170 (96%), Analytical Writing 3.5 (38%) 
 - **TOEFL iBT 110** (Reading 30, Listening 29, Speaking 23, Writing 28)
 - **Other Languages:** Mandarin (native)
+
+### <span id="jump">Photos</span>
 
