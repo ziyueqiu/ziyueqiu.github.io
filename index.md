@@ -69,7 +69,7 @@ Advisor: **[Kai Xing](http://staff.ustc.edu.cn/~kxing/)** (Associate Professor o
 
 <p style="text-align:left;"><strong>Linux User Group @ USTC | vice president & CFO</strong><span style="float:right;">Sep 2020 – Jul 2021</span></p>
 
-[photos](#jump)
+[jump to photos](#jump)
 
 - Kept the accounts.
 - Organized activities (Hackergame got more participants, growing from 2682 in 2019 to 3733 in 2020)
@@ -114,5 +114,10 @@ Advisor: **[Kai Xing](http://staff.ustc.edu.cn/~kxing/)** (Associate Professor o
 - **TOEFL iBT 110** (Reading 30, Listening 29, Speaking 23, Writing 28)
 - **Other Languages:** Mandarin (native)
 
-### <span id="jump">Photos</span>
+### Photos
 
+<span id="jump">Frisbee</span>
+
+![Picture1](pics/Picture1.jpg)
+
+<img src="pics/Picture2.jpg" alt="Picture2" style="zoom: 25%;" />
