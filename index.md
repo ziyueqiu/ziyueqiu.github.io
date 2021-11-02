@@ -16,14 +16,11 @@ Github: [USTCqzy](https://github.com/USTCqzy)
 
 <p style="text-align:left;"><strong><a href="http://en.ustc.edu.cn/">University of Science and Technology of China (USTC)</a></strong><span style="float:right;">Sep 2018 - present</span></p>
 
-- Bachelor of Engineering, **Special Class for the Gifted Young (under 16 years old)**, Major in Computer Science and Technology (expected in Jul 2022)
-
+- Major in Computer Science and Technology (expected in Jul 2022)
+- Bachelor of Engineering, **Special Class for the Gifted Young (under 16 years old)**
 - **Hua Xia Talent Program** in Computer Science and Technology (25 students selected from all 1,800 entering in 2018)
-
-- GPA (overall): **3.92/4.3 (90.7/100)**, ranking: **9/252 (Top 4% in all students major in Computer Science)**
-
+- GPA (overall): **3.92/4.3 (90.7/100)**, ranking: **9/251 (Top 4% in all students major in Computer Science)**
 - **Mathematics Relevant Coursework:** Mathematical Analysis B1 (91/100), Linear Algebra B1 (94/100), Function of Complex Variable B (95/100), Probability and Statistics B (99/100), Equations of Mathematical Physics B (99/100), Stochastic Processes B (96/100)
-
 - **Computer Science Relevant Coursework:** Graph Theory (95/100), Analog and Digital Circuits (91/100), Introduction to Computer Systems (Honor) (90/100), Syllabus of Digital Logic Lab (97/100), Operating Systems (Honor) (92/100), Foundations of Algorithms (95/100), Design Methods of Embedded System (98/100), Web Information Processing and Application (97/100), An Introduction to Database System (96/100), Fundamental of Artificial Intelligence (96/100)
 
 ### Research Experiences
@@ -32,11 +29,13 @@ Github: [USTCqzy](https://github.com/USTCqzy)
 
 <p style="text-align:left;"><strong>Research Intern, <a href="https://www.microsoft.com/en-us/research/group/systems-research-group-asia/">System Group</a>, Microsoft Research Asia</strong><span style="float:right;">Jul 2021 - present</span></p>
 
-***Fasting Caching***
+**Time to change: new design for modern caching systems**
 
-Advisor: **[Cheng Li](http://staff.ustc.edu.cn/~chengli7/)** (Research Professor of Computer Science Department, USTC), **[Xiaosong Ma](https://www.hbku.edu.qa/en/staff/dr-xiaosong-ma)** (Senior Scientist, Qatar  Computing Research Institute, HBKU), **[Qi Chen](https://www.microsoft.com/en-us/research/people/cheqi/)** (Microsoft Research Asia), **[Mao Yang](https://www.microsoft.com/en-us/research/people/maoyang/)** (Microsoft Research Asia), **[Lidong Zhou](https://www.microsoft.com/en-us/research/people/lidongz/)** (Microsoft Research Asia)
+Advisor: Prof. **[Cheng Li](http://staff.ustc.edu.cn/~chengli7/)** (USTC), **[Xiaosong Ma](https://www.hbku.edu.qa/en/staff/dr-xiaosong-ma)** (Senior Scientist, Qatar  Computing Research Institute, HBKU), **[Qi Chen](https://www.microsoft.com/en-us/research/people/cheqi/)** (Microsoft Research Asia), **[Mao Yang](https://www.microsoft.com/en-us/research/people/maoyang/)** (Microsoft Research Asia), **[Lidong Zhou](https://www.microsoft.com/en-us/research/people/lidongz/)** (Microsoft Research Asia)
 
-- Examined lock contention problems and improved scalability in all caching situations (not on any specific cache  algorithm).
+- Found serious management cost in modern caching systems.
+- Proposed new design to mitigate management cost by identifying two key costs.
+- Improved state-of-art caching up to 2~3x.
 - Preparing a **first-author** submission to **OSDI'22**.
 
 <p style="text-align:left;"><em><strong><a href="https://gitee.com/RubyOcelot/ustc-compile-2020/tree/master/mlir-toy-new">Research on MLIR Toy</a></strong></em><span style="float:right;">Dec 2020 - Jan 2021</span></p>
@@ -60,8 +59,6 @@ Advisor: **[Kai Xing](http://staff.ustc.edu.cn/~kxing/)** (Associate Professor o
 - An important mathematical foundation course for undergraduates in Computer Science (CS).
 
 <p style="text-align:left;"><strong>Ultimate Frisbee Team @ USTC | CFO & Core Member</strong><span style="float:right;">Oct 2020 - present</span></p>
-
-
 
 - Kept the accounts.
 
@@ -98,7 +95,7 @@ Advisor: **[Kai Xing](http://staff.ustc.edu.cn/~kxing/)** (Associate Professor o
 <p style="text-align:left;">Hua Xia Talent Program First Prize Scholarship (12/250 students major in Computer Science)<span style="float:right;">2020</span></p>
 <p style="text-align:left;">Zhong Hai Memorial Scholarship (2/200+) <a href="https://www.ustcif.org.cn/default.php/content/4674/">[report]</a><span style="float:right;">2020</span></p>
 <p style="text-align:left;">Alumni Scholarship of School of Gifted Young, USTC (10/1000+)<span style="float:right;">2019</span></p>
-<p style="text-align:left;">Chen Guoliang Academician Scholarship (Top 10%)<span style="float:right;">2019</span></p>
+<p style="text-align:left;">Chen Guoliang Academician Scholarship (Top 10%) <a href="http://stuhome.ustc.edu.cn/2020/1012/c2299a452228/page.htm">[report]</a><span style="float:right;">2019</span></p>
 
 ### Skills
 
