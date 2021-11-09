@@ -29,13 +29,13 @@ Github: [USTCqzy](https://github.com/USTCqzy)
 
 <p style="text-align:left;"><strong>Research Intern, <a href="https://www.microsoft.com/en-us/research/group/systems-research-group-asia/">System Group</a>, Microsoft Research Asia</strong><span style="float:right;">Jul 2021 - present</span></p>
 
-**Time to change: new design for modern caching systems**
+**Time to change: two-layer caching design for modern systems**
 
 Advisor: Prof. **[Cheng Li](http://staff.ustc.edu.cn/~chengli7/)** (USTC), **[Xiaosong Ma](https://www.hbku.edu.qa/en/staff/dr-xiaosong-ma)** (Senior Scientist, Qatar  Computing Research Institute, HBKU), **[Qi Chen](https://www.microsoft.com/en-us/research/people/cheqi/)** (Microsoft Research Asia), **[Mao Yang](https://www.microsoft.com/en-us/research/people/maoyang/)** (Microsoft Research Asia), **[Lidong Zhou](https://www.microsoft.com/en-us/research/people/lidongz/)** (Microsoft Research Asia)
 
-- Found serious management cost in modern caching systems.
-- Proposed new design to mitigate management cost by identifying two key costs.
-- Improved state-of-art caching up to 2~3x.
+- Identified serious management cost in modern caching systems caused by lock synchronization and block mapping.
+- Proposed a two-layer design to reduce management cost by eliminating lock synchronization and speeding mapping.
+- Conducted an extensive evaluation on real-world workloads, and achieved up to 2~3x speedup.
 - Preparing a **first-author** submission to **OSDI'22**.
 
 <p style="text-align:left;"><em><strong><a href="https://gitee.com/RubyOcelot/ustc-compile-2020/tree/master/mlir-toy-new">Research on MLIR Toy</a></strong></em><span style="float:right;">Dec 2020 - Jan 2021</span></p>
@@ -60,15 +60,12 @@ Advisor: **[Kai Xing](http://staff.ustc.edu.cn/~kxing/)** (Associate Professor o
 
 <p style="text-align:left;"><strong>Ultimate Frisbee Team @ USTC | CFO & Core Member</strong><span style="float:right;">Oct 2020 - present</span></p>
 
-- Kept the accounts.
-
 -  Joined competitions including Luzhou Hat 2020, Tianjing Open 2021, Beiyu Jumble 2021.
 
 <p style="text-align:left;"><strong>Linux User Group @ USTC | vice president & CFO</strong><span style="float:right;">Sep 2020 – Jul 2021</span></p>
 
 [jump to photos](#jump)
 
-- Kept the accounts.
 - Organized activities (Hackergame got more participants, growing from 2682 in 2019 to 3733 in 2020)
 
 <p style="text-align:left;"><strong>Debate Team, School of Gifted Young, USTC | Leader</strong><span style="float:right;">Jun 2019 - May 2020</span></p>
@@ -77,7 +74,7 @@ Advisor: **[Kai Xing](http://staff.ustc.edu.cn/~kxing/)** (Associate Professor o
 
 <p style="text-align:left;"><strong>University of Texas at Austin International Academy Program</strong><span style="float:right;">Jul 2019 - Aug 2019</span></p>
 
-- Studyed listening, writing and computer course for four weeks.
+- Studied listening, writing and computer course for four weeks.
 
 <p style="text-align:left;"><strong>Campus propaganda in high school for USTC | Speaker</strong><span style="float:right;">Dec 2018</span></p>
 
@@ -85,8 +82,6 @@ Advisor: **[Kai Xing](http://staff.ustc.edu.cn/~kxing/)** (Associate Professor o
 - Organized the whole propaganda (100+ students attended) and won acclaim.
 
 <p style="text-align:left;"><strong>Football Team, School of Gifted Young, USTC | Manager</strong><span style="float:right;">Oct 2018 - Oct 2019</span></p>
-
-- Kept the accounts.
 
 ### Awards & Honors
 
