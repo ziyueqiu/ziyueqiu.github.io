@@ -11,7 +11,7 @@ github_repo: "https://github.com/USTCqzy/USTCqzy.github.io.git" # you code repos
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "qiuziyue [at] mail [dot] ustc [dot] edu [dot] cn"
+sidebar-about-description: "Welcome!"
 sidebar-avatar: /img/myphoto.jpeg     # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -21,6 +21,8 @@ RSS: false
 # weibo_username:     暂无
 #zhihu_username:     暂无
 github_username:    USTCqzy
+telegram_username:  dopanic
+email: qiuziyue@mail.ustc.edu.cn
 #facebook_username:  暂无
 #jianshu_username:   暂无
 #twitter_username:   暂无
@@ -101,5 +103,8 @@ friends: [
     },{
         title: "Liwei Luo",
         href: "https://loliw.moe/"
+    },{
+        title: "Ruomin Huang",
+        href: "https://fockee.github.io/"
     }
 ]
