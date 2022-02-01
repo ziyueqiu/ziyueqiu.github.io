@@ -1,4 +1,11 @@
-## Welcome to Ziyue Qiu's Home Page
+---
+layout:     page
+title: "Ziyue's Homepage"
+description: "This is Ziyue Qiu."
+header-img: "img/black-bg.webp"
+---
+
+<!-- ## Welcome to Ziyue Qiu's Home Page
 
 <img src=".\pics\photo.jpeg" alt="photo" style="zoom:33%;" />
 
@@ -6,7 +13,7 @@ Email: qiuziyue@mail.ustc.edu.cn
 
 Address: University of Science and Technology of China, No.96, JinZhai Road Baohe District, Hefei, Anhui, 230026,P.R.China
 
-Github: [USTCqzy](https://github.com/USTCqzy)
+Github: [USTCqzy](https://github.com/USTCqzy) -->
 
 ### Biography
 
@@ -110,6 +117,6 @@ Advisor: **[Kai Xing](http://staff.ustc.edu.cn/~kxing/)** (Associate Professor o
 
 <span id="jump">Frisbee</span>
 
-![Picture1](pics/Picture1.jpg)
+![Picture1](img/Picture1.jpg)
 
-<img src="pics/Picture2.jpg" alt="Picture2" style="zoom: 25%;" />
+<img src="img/Picture2.jpg" alt="Picture2" style="zoom: 25%;" />
