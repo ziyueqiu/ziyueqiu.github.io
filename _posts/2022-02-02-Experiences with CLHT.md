@@ -2,7 +2,7 @@
 layout:     post
 title:      Experiences with CLHT
 subtitle:   a research concurrent hash table from EPFL
-date:       2021-02-02
+date:       2022-02-02
 author:     Ziyue Qiu
 header-img: img/black-bg.webp
 catalog: true
@@ -13,8 +13,9 @@ tags:
 
 ## What you will see
 
-- Fix CLHT into use
-- Add `clht_clear()` to support usage
+1. Fix CLHT into use
+
+2. Add `clht_clear()` to support usage
 
 View complete code change from my [forked repo here](https://github.com/USTCqzy/CLHT)
 
@@ -22,7 +23,7 @@ View complete code change from my [forked repo here](https://github.com/USTCqzy/
 
 ### Machine dependent parameters
 
-Get info from machine:
+Get info from machine (for example)
 
 ~~~bash
 $ cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c
@@ -33,7 +34,7 @@ $ cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c
 
 
 
-Add info into `external/include/utils.h`
+Add info into `external/include/utils.h` (for example)
 
 ```c
 #define XEONR
@@ -80,7 +81,7 @@ extern "C"
 {
 #endif
   
-... // prior
+... // prior declaration
   
 #ifdef __cplusplus
 }
@@ -130,5 +131,7 @@ clht_destroy(clht_hashtable_t* hashtable)
 }
 ```
 
+## Reference
 
+1. Related Publication: [*Asynchronized Concurrency: The Secret to Scaling Concurrent Search Data Structures*](https://infoscience.epfl.ch/record/207109), Tudor David, Rachid Guerraoui, Vasileios Trigonakis (alphabetical order), ASPLOS '15
 
