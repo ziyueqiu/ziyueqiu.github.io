@@ -9,7 +9,7 @@ View my [<u>CV</u>]({{ site.url }}/download/CV_Ziyue_Qiu.pdf)
 
 ### Biography
 
-I am a senior student at Department of Computer Science and Technology. I am advised by Prof. [<u>Cheng Li</u>](http://staff.ustc.edu.cn/~chengli7/) at USTC, Prof. [<u>Xiaosong Ma</u>](https://www.hbku.edu.qa/en/staff/dr-xiaosong-ma) at Qatar Computing Research Institute & HKBU, Dr. [<u>Qi Chen</u>](https://www.microsoft.com/en-us/research/people/cheqi/), Dr. [<u>Mao Yang</u>](https://www.microsoft.com/en-us/research/people/maoyang/) at MSR-Asia. I am interested in storage systems, operating systems and other system issues.
+I am Ziyue Qiu (邱子悦 in Chinese), a senior student at Department of Computer Science and Technology. I am advised by Prof. [<u>Cheng Li</u>](http://staff.ustc.edu.cn/~chengli7/) at USTC, Prof. [<u>Xiaosong Ma</u>](https://www.hbku.edu.qa/en/staff/dr-xiaosong-ma) at Qatar Computing Research Institute & HKBU, Dr. [<u>Qi Chen</u>](https://www.microsoft.com/en-us/research/people/cheqi/), Dr. [<u>Mao Yang</u>](https://www.microsoft.com/en-us/research/people/maoyang/) at MSR-Asia. I am interested in storage systems, operating systems and other system issues.
 
 ### Education
 

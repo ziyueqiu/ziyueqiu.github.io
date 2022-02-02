@@ -56,6 +56,7 @@ highlighter: rouge
 #    extensions: [ "hard_wrap","autolink", "tables", "strikethrough", "superscript", "with_toc_data", "highlight", "prettify","no_intra_emphasis"]
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
+  syntax_highlighter: rouge
 
 
 
@@ -106,5 +107,14 @@ friends: [
     },{
         title: "Ruomin Huang",
         href: "https://fockee.github.io/"
+    },{
+        title: "Beining Wu",
+        href: "https://beiningwu7.github.io/"
+    },{
+        title: "Zhanghan Wang",
+        href: "https://rabbitwhite1.github.io/"
+    },{
+        title: "Wei Fan",
+        href: "http://home.ustc.edu.cn/~luke2001/"
     }
 ]
