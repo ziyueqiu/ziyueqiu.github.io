@@ -9,7 +9,7 @@ View my [<u>CV</u>]({{ site.url }}/download/CV_Ziyue_Qiu.pdf)
 
 ### Biography
 
-I am Ziyue Qiu (邱子悦 in Chinese), a senior student at Department of Computer Science and Technology. I am advised by Prof. [<u>Cheng Li</u>](http://staff.ustc.edu.cn/~chengli7/) at USTC, Prof. [<u>Xiaosong Ma</u>](https://www.hbku.edu.qa/en/staff/dr-xiaosong-ma) at Qatar Computing Research Institute & HKBU, Dr. [<u>Qi Chen</u>](https://www.microsoft.com/en-us/research/people/cheqi/), Dr. [<u>Mao Yang</u>](https://www.microsoft.com/en-us/research/people/maoyang/) at MSR-Asia. I am interested in storage systems, operating systems and other system issues.
+I am Ziyue Qiu (邱子悦 in Chinese), a senior student at Department of Computer Science and Technology, University of Science and Technology of China. I am advised by Prof. [<u>Cheng Li</u>](http://staff.ustc.edu.cn/~chengli7/) at USTC, Prof. [<u>Xiaosong Ma</u>](https://www.hbku.edu.qa/en/staff/dr-xiaosong-ma) at Qatar Computing Research Institute & HKBU, Dr. [<u>Qi Chen</u>](https://www.microsoft.com/en-us/research/people/cheqi/), Dr. [<u>Mao Yang</u>](https://www.microsoft.com/en-us/research/people/maoyang/) at MSR-Asia. I am interested in storage systems, operating systems and other system issues.
 
 ### Education
 
@@ -108,3 +108,7 @@ Advisor: [<u>Kai Xing</u>](http://staff.ustc.edu.cn/~kxing/) (Associate Professo
 ![Picture1](img/Picture1.jpg)
 
 <img src="img/Picture2.jpg" alt="Picture2" style="zoom: 25%;" />
+
+### Useful Links
+
+[Questions to Ask a Prospective Ph.D. Advisor on Visit Day](https://blog.ml.cmu.edu/2020/03/02/questions-to-ask-a-prospective-ph-d-advisor-on-visit-day-with-thorough-and-forthright-explanations/)

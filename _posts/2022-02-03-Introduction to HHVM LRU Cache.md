@@ -11,8 +11,6 @@ tags:
 
 ---
 
-[TOC]
-
 ## What you will see
 
 I am impressed by this 400 LOC pure implementation of LRU Cache [source code](https://github.com/facebook/hhvm/blob/master/hphp/util/concurrent-lru-cache.h), and decide to introduce its design through scanning the code. I believe learning HHVM LRU Cache implementation can help when needing to understand all kinds of cache implementations.
