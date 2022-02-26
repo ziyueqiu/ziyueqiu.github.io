@@ -55,23 +55,20 @@ Advisor: [<u>Kai Xing</u>](http://staff.ustc.edu.cn/~kxing/) (Associate Professo
 
 #### Academic & Leadership
 
-Linux User Group @ USTC | Vice President & CFO, Sep 2020 - Jul 2021
+Linux User Group @ USTC \| Vice President & CFO, Sep 2020 - Jul 2021
 
 University of Texas at Austin International Academy Program, Jul 2019 - Aug 2019
-
 - Studied listening, writing and computer course for four weeks.
 
 Teaching Assistant, Mathematical Logic Course, Mar 2021 - Jul 2021
 
 Campus Lecture in high school for USTC \| Speaker, Dec 2018
-
 - Selected from hundreds of students to introduce USTC to my high school.
 - Organized the lecture to more than 100 and was praised.
 
 #### Social & Sports
 
 Ultimate Frisbee Team @ USTC \| CFO & Core Member, Oct 2020 - present
-
 -  Entered competitions including Luzhou Hat 2020, Tianjing Open 2021, Beiyu Jumble 2021.
 
 Debate Team, School of Gifted Young, USTC \| Leader, Jun 2019 - May 2020
