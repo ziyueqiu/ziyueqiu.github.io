@@ -63,20 +63,20 @@ University of Texas at Austin International Academy Program, Jul 2019 - Aug 2019
 
 Teaching Assistant, Mathematical Logic Course, Mar 2021 - Jul 2021
 
-Campus Lecture in high school for USTC | Speaker, Dec 2018
+Campus Lecture in high school for USTC \| Speaker, Dec 2018
 
 - Selected from hundreds of students to introduce USTC to my high school.
 - Organized the lecture to more than 100 and was praised.
 
 #### Social & Sports
 
-Ultimate Frisbee Team @ USTC | CFO & Core Member, Oct 2020 - present
+Ultimate Frisbee Team @ USTC \| CFO & Core Member, Oct 2020 - present
 
 -  Entered competitions including Luzhou Hat 2020, Tianjing Open 2021, Beiyu Jumble 2021.
 
-Debate Team, School of Gifted Young, USTC | Leader, Jun 2019 - May 2020
+Debate Team, School of Gifted Young, USTC \| Leader, Jun 2019 - May 2020
 
-Football Team, School of Gifted Young, USTC | Manager, Oct 2018 - Oct 2019
+Football Team, School of Gifted Young, USTC \| Manager, Oct 2018 - Oct 2019
 
 ### Skills
 
