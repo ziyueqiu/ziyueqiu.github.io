@@ -95,6 +95,22 @@ chrome-tab-theme-color: "#000000"
 service-worker: true
 
 
+# -----------------------------------------------------------------------------
+# Collections
+# -----------------------------------------------------------------------------
+
+collections:
+  news:
+    defaults:
+      layout: post
+    output: true
+    permalink: /news/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+news_limit: 5
+
 
 # Friends
 friends: [
@@ -116,5 +132,8 @@ friends: [
     },{
         title: "Wei Fan",
         href: "http://home.ustc.edu.cn/~luke2001/"
+    },{
+        title: "Bowen Li",
+        href: "https://jaraxxus-me.github.io/"
     }
 ]

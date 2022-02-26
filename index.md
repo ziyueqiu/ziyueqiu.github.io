@@ -3,6 +3,8 @@ layout:     page
 title: "Ziyue's Homepage"
 description: "This is Ziyue Qiu."
 header-img: "img/black-bg.webp"
+
+news: true
 ---
 
 View my [<u>CV</u>]({{ site.url }}/download/CV_Ziyue_Qiu.pdf)
@@ -78,15 +80,6 @@ Advisor: [<u>Kai Xing</u>](http://staff.ustc.edu.cn/~kxing/) (Associate Professo
 
 <p style="text-align:left;"><strong>Football Team, School of Gifted Young, USTC | Manager</strong><span style="float:right;">Oct 2018 - Oct 2019</span></p>
 
-### Awards & Honors
-
-<p style="text-align:left;">China National Scholarship (Top 1%) <a href="http://stuhome.ustc.edu.cn/2021/1019/c2316a526085/pagem.htm">[report]</a><span style="float:right;">2021</span></p>
-<p style="text-align:left;">SGY Sihua Scholarship  (4/50)<span style="float:right;">2020</span></p>
-<p style="text-align:left;">Hua Xia Talent Program First Prize Scholarship (12/250 students major in Computer Science)<span style="float:right;">2020</span></p>
-<p style="text-align:left;">Zhong Hai Memorial Scholarship (2/200) <a href="https://www.ustcif.org.cn/default.php/content/4674/">[report]</a><span style="float:right;">2020</span></p>
-<p style="text-align:left;">SGY Class of 87 Innovation Scholarship (10/1000)<span style="float:right;">2019</span></p>
-<p style="text-align:left;">Chen Guoliang  Scholarship (Top 10%) <a href="http://stuhome.ustc.edu.cn/2020/1012/c2299a452228/page.htm">[report]</a><span style="float:right;">2019</span></p>
-
 ### Skills
 
 **Programming Skills**
@@ -111,4 +104,7 @@ Advisor: [<u>Kai Xing</u>](http://staff.ustc.edu.cn/~kxing/) (Associate Professo
 
 ### Useful Links
 
-[Questions to Ask a Prospective Ph.D. Advisor on Visit Day](https://blog.ml.cmu.edu/2020/03/02/questions-to-ask-a-prospective-ph-d-advisor-on-visit-day-with-thorough-and-forthright-explanations/)
+[Questions to Ask a Prospective Ph.D. Advisor on Visit Day (blog)](https://blog.ml.cmu.edu/2020/03/02/questions-to-ask-a-prospective-ph-d-advisor-on-visit-day-with-thorough-and-forthright-explanations/)
+
+[CS PhD 学术与生活（YouTube）](https://www.youtube.com/playlist?list=PLD0qOSaD5_Z6UBaWjSJ6xMDECHANcLim5)
+

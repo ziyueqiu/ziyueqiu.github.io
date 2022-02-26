@@ -21,6 +21,11 @@
 
     {{ content }}
 
+    {% if page.news -%}
+    <!-- News -->
+    {%- include news.html %}
+    {%- endif %}
+
     {% include footer.html %}
 
 
