@@ -26,16 +26,16 @@ I am Ziyue Qiu (邱子悦 in Chinese), a senior student at Department of Compute
 
 ***Two-layer caching design for modern software infrastructures***
 
-<p style="text-align:left;"><strong>Undergraduate Researcher, <u><a href="http://adsl.ustc.edu.cn/">Advanced Data Systems Laboratory (ADSL)</a></u>, USTC</strong><span style="float:right;">Jan 2021 - present</span></p>
+**Undergraduate Researcher**, [<u>Advanced Data Systems Laboratory (ADSL)</u>](http://adsl.ustc.edu.cn/), USTC, Jan 2021 - present
 
-<p style="text-align:left;"><strong>Research Intern, <u><a href="https://www.microsoft.com/en-us/research/group/systems-research-group-asia/">System Group</a></u>, Microsoft Research Asia</strong><span style="float:right;">Jul 2021 - present</span></p>
+**Research Intern**, [<u>System Group</u>](https://www.microsoft.com/en-us/research/group/systems-research-group-asia/), Microsoft Research Asia, Jul 2021 - present
 
 Advisor: Prof. [Cheng Li](http://staff.ustc.edu.cn/~chengli7/) (USTC), [Xiaosong Ma](https://www.hbku.edu.qa/en/staff/dr-xiaosong-ma) (Qatar  Computing Research Institute, HBKU), [Qi Chen](https://www.microsoft.com/en-us/research/people/cheqi/), [Mao Yang](https://www.microsoft.com/en-us/research/people/maoyang/) (Microsoft Research Asia)
 
 - Identified and reduced serious management costs in software (block) caches caused by lock synchronization and disk-block indexing.
 - Proposed a two-layer design that aggressively optimize for cache hit path.
 - Achieved a 2-3x speedup in an extensive evaluation on real-world workloads.
-- Preparing a **first-author** submission to **OSDI'22**.
+- Submitted to **OSDI'22**  as the **first author**.
 
 <p style="text-align:left;"><em><u><strong><a href="https://gitee.com/RubyOcelot/ustc-compile-2020/tree/master/mlir-toy-new">Research on MLIR Toy</a></strong></u></em><span style="float:right;">Dec 2020 - Jan 2021</span></p>
 
@@ -55,30 +55,28 @@ Advisor: [<u>Kai Xing</u>](http://staff.ustc.edu.cn/~kxing/) (Associate Professo
 
 #### Academic & Leadership
 
-<p style="text-align:left;"><strong>Linux User Group @ USTC | Vice President & CFO</strong><span style="float:right;">Sep 2020 – Jul 2021</span></p>
+Linux User Group @ USTC | Vice President & CFO, Sep 2020 - Jul 2021
 
-<p style="text-align:left;"><strong>University of Texas at Austin International Academy Program</strong><span style="float:right;">Jul 2019 - Aug 2019</span></p>
+University of Texas at Austin International Academy Program, Jul 2019 - Aug 2019
 
 - Studied listening, writing and computer course for four weeks.
 
-<p style="text-align:left;"><strong>Teaching Assistant, Mathematical Logic Course </strong><span style="float:right;">Mar 2021 – Jul 2021</span></p>
+Teaching Assistant, Mathematical Logic Course, Mar 2021 - Jul 2021
 
-<p style="text-align:left;"><strong>Campus propaganda in high school for USTC | Speaker</strong><span style="float:right;">Dec 2018</span></p>
+Campus Lecture in high school for USTC | Speaker, Dec 2018
 
 - Selected from hundreds of students to introduce USTC to my high school.
 - Organized the lecture to more than 100 and was praised.
 
-
-
 #### Social & Sports
 
-<p style="text-align:left;"><strong>Ultimate Frisbee Team @ USTC | CFO & Core Member</strong><span style="float:right;">Oct 2020 - present</span></p>
+Ultimate Frisbee Team @ USTC | CFO & Core Member, Oct 2020 - present
 
 -  Entered competitions including Luzhou Hat 2020, Tianjing Open 2021, Beiyu Jumble 2021.
 
-<p style="text-align:left;"><strong>Debate Team, School of Gifted Young, USTC | Leader</strong><span style="float:right;">Jun 2019 - May 2020</span></p>
+Debate Team, School of Gifted Young, USTC | Leader, Jun 2019 - May 2020
 
-<p style="text-align:left;"><strong>Football Team, School of Gifted Young, USTC | Manager</strong><span style="float:right;">Oct 2018 - Oct 2019</span></p>
+Football Team, School of Gifted Young, USTC | Manager, Oct 2018 - Oct 2019
 
 ### Skills
 
@@ -104,7 +102,7 @@ Advisor: [<u>Kai Xing</u>](http://staff.ustc.edu.cn/~kxing/) (Associate Professo
 
 ### Useful Links
 
-[Questions to Ask a Prospective Ph.D. Advisor on Visit Day (blog)](https://blog.ml.cmu.edu/2020/03/02/questions-to-ask-a-prospective-ph-d-advisor-on-visit-day-with-thorough-and-forthright-explanations/)
+[<u>Questions to Ask a Prospective Ph.D. Advisor on Visit Day</u>](https://blog.ml.cmu.edu/2020/03/02/questions-to-ask-a-prospective-ph-d-advisor-on-visit-day-with-thorough-and-forthright-explanations/) (blog)
 
-[CS PhD 学术与生活（YouTube）](https://www.youtube.com/playlist?list=PLD0qOSaD5_Z6UBaWjSJ6xMDECHANcLim5)
+[<u>CS PhD 学术与生活</u>](https://www.youtube.com/playlist?list=PLD0qOSaD5_Z6UBaWjSJ6xMDECHANcLim5) (YouTube)
 
