@@ -99,7 +99,13 @@ Football Team, School of Gifted Young, USTC \| Manager, Oct 2018 - Oct 2019
 
 ### Useful Links
 
-[<u>Questions to Ask a Prospective Ph.D. Advisor on Visit Day</u>](https://blog.ml.cmu.edu/2020/03/02/questions-to-ask-a-prospective-ph-d-advisor-on-visit-day-with-thorough-and-forthright-explanations/) (blog)
+**Blog**
 
-[<u>CS PhD 学术与生活</u>](https://www.youtube.com/playlist?list=PLD0qOSaD5_Z6UBaWjSJ6xMDECHANcLim5) (YouTube)
+<u>[Tips about writing systems papers, Lin Zhong](http://linzhong.org/opinions/writing.html)</u>
+
+[<u>Questions to Ask a Prospective Ph.D. Advisor on Visit Day</u>](https://blog.ml.cmu.edu/2020/03/02/questions-to-ask-a-prospective-ph-d-advisor-on-visit-day-with-thorough-and-forthright-explanations/)
+
+**Video**
+
+[<u>CS PhD 学术与生活</u>](https://www.youtube.com/playlist?list=PLD0qOSaD5_Z6UBaWjSJ6xMDECHANcLim5)
 
