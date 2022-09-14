@@ -1,282 +1,554 @@
+# al-folio
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[core_contributors]: https://img.shields.io/badge/core_contributors-3-orange.svg 'Number of core contributors'
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+[![deploy](https://github.com/alshedivat/al-folio/actions/workflows/deploy.yml/badge.svg)](https://github.com/alshedivat/al-folio/actions/workflows/deploy.yml)
+[![demo](https://img.shields.io/badge/theme-demo-brightgreen.svg)](https://alshedivat.github.io/al-folio/)
+[![GitHub contributors](https://img.shields.io/github/contributors/alshedivat/al-folio.svg)](https://github.com/alshedivat/al-folio/graphs/contributors/)
+[![Core Contributors][core_contributors]](#core-contributors-)
+[![GitHub release](https://img.shields.io/github/v/release/alshedivat/al-folio)](https://github.com/alshedivat/al-folio/releases/latest)
+[![GitHub license](https://img.shields.io/github/license/alshedivat/al-folio?color=blue)](https://github.com/alshedivat/al-folio/blob/master/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/alshedivat/al-folio)](https://github.com/alshedivat/al-folio)
+[![GitHub forks](https://img.shields.io/github/forks/alshedivat/al-folio)](https://github.com/alshedivat/al-folio/fork)
+
+A simple, clean, and responsive [Jekyll](https://jekyllrb.com/) theme for academics.
+If you like the theme, give it a star!
+
+[![Preview](https://raw.githubusercontent.com/alshedivat/al-folio/master/assets/img/al-folio-preview.png)](https://alshedivat.github.io/al-folio/)
 
 
-![](https://raw.githubusercontent.com/qiubaiying/qiubaiying.github.io/master/img/readme-home.png)
+## User community
 
-[![Build Status](https://travis-ci.org/qiubaiying/qiubaiying.github.io.svg?branch=master)](https://travis-ci.org/qiubaiying/qiubaiying.github.io)
-[![codebeat badge](https://codebeat.co/badges/5f031df3-f6c1-4ec0-911a-ff6617ca50b9)](https://codebeat.co/projects/github-com-qiubaiying-qiubaiying-github-io-master)
-[![GitHub issues](https://img.shields.io/github/issues/qiubaiying/qiubaiying.github.io.svg?style=flat)](https://github.com/qiubaiying/qiubaiying.github.io/issues)
-[![License MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/home-assistant/home-assistant-iOS/blob/master/LICENSE)
-[![](https://img.shields.io/github/stars/qiubaiying/qiubaiying.github.io.svg?style=social&label=Star)](https://github.com/qiubaiying/qiubaiying.github.io)
-[![](https://img.shields.io/github/forks/qiubaiying/qiubaiying.github.io.svg?style=social&label=Fork)](https://github.com/qiubaiying/qiubaiying.github.io)
+The vibrant community of **al-folio** users is growing!
+Academics around the world use this theme for their homepages, blogs, lab pages, as well as webpages for courses, workshops, conferences, meetups, and more.
+Check out the community webpages below.
+Feel free to add your own page(s) by sending a PR.
+
+<table>
+<tr>
+<td>Academics</td>
+<td>
+<a href="https://maruan.alshedivat.com" target="_blank">★</a>
+<a href="https://www.cs.columbia.edu/~chen1ru/" target="_blank">★</a>
+<a href="https://maithraraghu.com" target="_blank">★</a>
+<a href="https://platanios.org" target="_blank">★</a>
+<a href="https://otiliastr.github.io" target="_blank">★</a>
+<a href="https://www.maths.dur.ac.uk/~sxwc62/" target="_blank">★</a>
+<a href="https://jessachandler.com/" target="_blank">★</a>
+<a href="https://mayankm96.github.io/" target="_blank">★</a>
+<a href="https://markdean.info/" target="_blank">★</a>
+<a href="https://kakodkar.github.io/" target="_blank">★</a>
+<a href="https://sahirbhatnagar.com/" target="_blank">★</a>
+<a href="https://spd.gr/" target="_blank">★</a>
+<a href="https://jay-sarkar.github.io/" target="_blank">★</a>
+<a href="https://aborowska.github.io/" target="_blank">★</a>
+<a href="https://aditisgh.github.io/" target="_blank">★</a>
+<a href="https://alexhaydock.co.uk/" target="_blank">★</a>
+<a href="https://alixkeener.net/" target="_blank">★</a>
+<a href="https://andreea7b.github.io/" target="_blank">★</a>
+<a href="https://rishabhjoshi.github.io/" target="_blank">★</a>
+<a href="https://sheelabhadra.github.io/" target="_blank">★</a>
+<a href="https://giograno.me/" target="_blank">★</a>
+<a href="https://immsrini.github.io/" target="_blank">★</a>
+<a href="https://apooladian.github.io/" target="_blank">★</a>
+<a href="https://chinmoy-dutta.github.io/" target="_blank">★</a>
+<a href="https://liamcli.com/" target="_blank">★</a>
+<a href="https://yoonholee.com/" target="_blank">★</a>
+<a href="https://zrqiao.github.io/" target="_blank">★</a>
+<a href="https://abstractgeek.github.io/" target="_blank">★</a>
+<a href="https://www.compphys.de/" target="_blank">★</a>
+<a href="https://julianstreyczek.github.io" target="_blank">★</a>
+<a href="https://sdaza.com" target="_blank">★</a>
+<a href="https://niweera.gq" target="_blank">★</a>
+<a href="https://www.alihkw.com" target="_blank">★</a>
+<a href="https://amirpourmand.ir" target="_blank">★</a>
+<a href="https://scottleechua.github.io" target="_blank">★</a>
+<a href="https://sk1y101.github.io" target="_blank">★</a>
+<a href="https://yyang768osu.github.io" target="_blank">★</a>
+<a href="https://veedata.github.io" target="_blank">★</a>
+<a href="https://K-Wu.github.io" target="_blank">★</a>
+<a href="https://amalawilson.com" target="_blank">★</a>
+<a href="https://tirtharajdash.github.io" target="_blank">★</a>
+<a href="https://carolinacarreira.github.io" target="_blank">★</a>
+<a href="https://manandey.github.io" target="_blank">★</a>
+<a href="https://johanneshoerner.github.io" target="_blank">★</a>
+<a href="https://ioannismavromatis.com" target="_blank">★</a>
+<a href="https://taidnguyen.github.io" target="_blank">★</a>
+<a href="https://lbugnon.github.io" target="_blank">★</a>
+<a href="https://joahannes.github.io" target="_blank">★</a>
+<a href="https://dominikstrb.github.io" target="_blank">★</a>
+</td>
+</tr>
+<tr>
+<td>Labs</td>
+<td>
+<a href="https://www.haylab.caltech.edu/" target="_blank">★</a>
+<a href="https://sjkimlab.github.io/" target="_blank">★</a>
+<a href="https://systemconsultantgroup.github.io/scg-folio/" target="_blank">★</a>
+<a href="https://decisionlab.ucsf.edu/" target="_blank">★</a>
+<a href="https://programming-group.com/" target="_blank">★</a>
+<a href="https://sailing-lab.github.io/" target="_blank">★</a>
+<a href="https://inbt.jhu.edu/epidiagnostics/" target="_blank">★</a>
+</td>
+</tr>
+<tr>
+<td>Courses</td>
+<td>
+CMU PGM (<a href="https://sailinglab.github.io/pgm-spring-2019/" target="_blank">S-19</a>) <br>
+CMU DeepRL (<a href="https://cmudeeprl.github.io/703website_f19/" target="_blank">F-19</a>, <a href="https://cmudeeprl.github.io/Spring202010403website/" target="_blank">S-20</a>, <a href="https://cmudeeprl.github.io/703website/" target="_blank">F-20</a>, <a href="https://cmudeeprl.github.io/403_website/"target="_blank">S-21</a>) <br>
+CMU MMML (<a href="https://cmu-multicomp-lab.github.io/mmml-course/fall2020/" target="_blank">F-20</a>) <br>
+CMU Distributed Systems (<a href="https://andrew.cmu.edu/course/15-440/" target="_blank">S-21</a>)
+</td>
+</tr>
+<tr>
+<td>Conferences & workshops</td>
+<td>
+ML Retrospectives (NeurIPS: <a href="https://ml-retrospectives.github.io/neurips2019/" target="_blank">2019</a>, <a href="https://ml-retrospectives.github.io/neurips2020/" target="_blank">2020</a>; ICML: <a href="https://ml-retrospectives.github.io/icml2020/" target="_blank">2020</a>) <br>
+HAMLETS (NeurIPS: <a href="https://hamlets-workshop.github.io/" target="_blank">2020</a>) <br>
+ICBINB (NeurIPS: <a href="https://i-cant-believe-its-not-better.github.io/" target="_blank">2020</a>, <a href="https://i-cant-believe-its-not-better.github.io/neurips2021/" target="_blank">2021</a>) <br>
+Neural Compression (ICLR: <a href="https://neuralcompression.github.io/" target="_blank">2021</a>)
+</td>
+</tr>
+</table>
 
 
-博客的搭建教程修改自 [Hux](https://github.com/Huxpro/huxpro.github.io) 
- 
-更为详细的教程戳这 [《利用 GitHub Pages 快速搭建个人博客》](http://www.jianshu.com/p/e68fba58f75c) 或 [wiki](https://github.com/qiubaiying/qiubaiying.github.io/wiki/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B)
+## Lighthouse PageSpeed Insights
 
->
-### [查看博客戳这里 👆](http://qiubaiying.github.io)
+[![Google PageSpeeg](https://raw.githubusercontent.com/alshedivat/al-folio/master/assets/img/pagespeed.svg)](https://pagespeed.web.dev/report?url=https%3A%2F%2Falshedivat.github.io%2Fal-folio%2F&form_factor=desktop)
 
 
+## Table Of Contents
 
-## 使用
+  * [User community](#user-community)
+  * [Lighthouse PageSpeed Insights](#lighthouse-pagespeed-insights)
+  * [Getting started](#getting-started)
+    + [Installation](#installation)
+      - [Local setup using Docker (Recommended on Windows)](#local-setup-using-docker-recommended-on-windows)
+      - [Local Setup (Standard)](#local-setup-standard)
+      - [Deployment](#deployment)
+      - [Upgrading from a previous version](#upgrading-from-a-previous-version)
+    + [FAQ](#faq)
+  * [Features](#features)
+    + [Publications](#publications)
+    + [Collections](#collections)
+    + [Layouts](#layouts)
+      - [The iconic style of Distill](#the-iconic-style-of-distill)
+      - [Full support for math & code](#full-support-for-math--code)
+      - [Photos](#photos)
+    + [Other features](#other-features)
+      - [GitHub repositories and user stats](#github-repositories-and-user-stats)
+      - [Theming](#theming)
+      - [Social media previews](#social-media-previews)
+      - [Atom (RSS-like) Feed](#atom-rss-like-feed)
+  * [Contributing](#contributing)
+    + [Core Contributors](#core-contributors)
+  * [License](#license)
 
-* 开始
-	* [环境](#环境)
-	* [开始](#开始)
-	* [撰写博文](#撰写博文)
-* 组件
-	* [侧边栏](#侧边栏)
-	* [迷你关于我](#mini-about-me)
-	* [推荐标签](#featured-tags)
-	* [好友链接](#friends)
-	* [HTML5 演示文档布局](#keynote-layout)
-* 评论与 Google/Baidu Analytics
-	* [评论](#comment)
-	* [网站分析](#analytics) 
-* 高级部分
-	* [自定义](#customization)
-	* [标题底图](#header-image)
-	* [搜索展示标题-头文件](#seo-title)
+## Getting started
+
+Want to learn more about Jekyll? Check out [this tutorial](https://www.taniarascia.com/make-a-static-website-with-jekyll/).
+Why Jekyll? Read [Andrej Karpathy's blog post](https://karpathy.github.io/2014/07/01/switching-to-jekyll/)!
 
 
+### Installation
 
-### 环境
+For a hands-on walkthrough of al-folio installation, check out [this cool video tutorial](https://www.youtube.com/watch?v=g6AJ9qPPoyc) by one of the community members! 🎬 🍿
 
-如果你安装了 [jekyll](http://jekyllcn.com/)，那你只需要在命令行输入`jekyll serve` 或 `jekyll s`就能在本地浏览器中输入`http://127.0.0.1:4000/`预览主题，对主题的修改也能实时展示（需要强刷浏览器）。
-
-
-
-### 开始
-
-你可以通用修改 `_config.yml`文件来轻松的开始搭建自己的博客:
-
-```
-# Site settings
-title: BY Blog                    # 你的博客网站标题
-SEOTitle: 柏荧的博客 | BY Blog		# SEO 标题
-description: "Hey"	   	   # 随便说点，描述一下
-
-# SNS settings      
-github_username: qiubaiying     # 你的github账号
-jianshu_username: e71990ada2fd  # 你的简书ID。
-
-# Build settings
-# paginate: 10              # 一页你准备放几篇文章
-```
-
-Jekyll官方网站还有很多的参数可以调，比如设置文章的链接形式...网址在这里：[Jekyll - Official Site](http://jekyllrb.com/) 中文版的在这里：[Jekyll中文](http://jekyllcn.com/).
-
-### 撰写博文
-
-要发表的文章一般以 **Markdown** 的格式放在这里`_posts/`，你只要看看这篇模板里的文章你就立刻明白该如何设置。
-
-yaml 头文件长这样:
-
-```
 ---
-layout:     post
-title:      定时器 你真的会使用吗？
-subtitle:   iOS定时器详解
-date:       2016-12-13
-author:     BY
-header-img: img/post-bg-ios9-web.jpg
-catalog: 	 true
-tags:
-    - iOS
-    - 定时器
----
 
+#### Local setup using Docker (Recommended on Windows)
+
+You need to take the following steps to get `al-folio` up and running in your local machine:
+
+- First, [install docker](https://docs.docker.com/get-docker/)
+- Then, clone this repository to your machine:
+
+```bash
+$ git clone git@github.com:<your-username>/<your-repo-name>.git
+$ cd <your-repo-name>
 ```
 
-### 侧边栏
+Finally, run the following command that will pull a pre-built image from DockerHub and will run your website.
 
-看右边:
-![](https://raw.githubusercontent.com/qiubaiying/qiubaiying.github.io/master/img/readme-side.png)
-
-设置是在 `_config.yml`文件里面的`Sidebar settings`那块。
-
-```
-# Sidebar settings
-sidebar: true  #添加侧边栏
-sidebar-about-description: "简单的描述一下你自己"
-sidebar-avatar: /img/avatar-by.jpg     #你的大头贴，请使用绝对地址.注意：名字区分大小写！后缀名也是
+```bash
+$ ./bin/dockerhub_run.sh
 ```
 
-侧边栏是响应式布局的，当屏幕尺寸小于992px的时候，侧边栏就会移动到底部。具体请见bootstrap栅格系统 <http://v3.bootcss.com/css/>
+Note that when you run it for the first time, it will download a docker image of size 300MB or so.
 
+Now, feel free to customize the theme however you like (don't forget to change the name!). After you are done, you can use the same command (`bin/dockerhub_run.sh`) to render the webpage with all you changes. Also, make sure to commit your final changes.
 
-### Mini About Me
+<details><summary>(click to expand) <strong>Build your own docker image (more advanced):</strong></summary>
 
-Mini-About-Me 这个模块将在你的头像下面，展示你所有的社交账号。这个也是响应式布局，当屏幕变小时候，会将其移动到页面底部，只不过会稍微有点小变化，具体请看代码。
+> Note: this approach is only necessary if you would like to build an older or very custom version of al-folio.
 
-### Featured Tags
-
-看到这个网站 [Medium](http://medium.com) 的推荐标签非常的炫酷，所以我将他加了进来。
-这个模块现在是独立的，可以呈现在所有页面，包括主页和发表的每一篇文章标题的头上。
-
-```
-# Featured Tags
-featured-tags: true  
-featured-condition-size: 1     # A tag will be featured if the size of it is more than this condition value
-```
-
-唯一需要注意的是`featured-condition-size`: 如果一个标签的 SIZE，也就是使用该标签的文章数大于上面设定的条件值，这个标签就会在首页上被推荐。
- 
-内部有一个条件模板 `{% if tag[1].size > {{site.featured-condition-size}} %}` 是用来做筛选过滤的.
-
-### Social-media Account
-
-在下面输入的社交账号，没有的添加的不会显示在侧边框中。新加入了[简书](https:/www.jianshu.com)链接, <http://www.jianshu.com/u/e71990ada2fd>
-
-	# SNS settings
-	RSS: false
-	jianshu_username: 	jianshu_id 
-	zhihu_username:     username
-	facebook_username:  username
-	github_username:    username
-	# weibo_username:   username
-	
-	
-
-![](http://ww4.sinaimg.cn/large/006tKfTcgy1fgrgbgf77aj308i02v748.jpg)
-
-### Friends
-
-好友链接部分。这会在全部页面显示。
-
-设置是在 `_config.yml`文件里面的`Friends`那块，自己加吧。
-
-```
-# Friends
-friends: [
-    {
-        title: "BY Blog",
-        href: "https://qiubaiying.github.io/"
-    },
-    {
-        title: "Apple",
-        href: "https://apple.com/"
-    }
-]
-```
-
-
-### Keynote Layout
-
-HTML5幻灯片的排版：
-
-![](https://camo.githubusercontent.com/f30347a118171820b46befdf77e7b7c53a5641a9/687474703a2f2f6875616e677875616e2e6d652f696d672f626c6f672d6b65796e6f74652e6a7067)
-
-这部分是用于占用html格式的幻灯片的，一般用到的是 Reveal.js, Impress.js, Slides, Prezi 等等.我认为一个现代化的博客怎么能少了放html幻灯的功能呢~
-
-其主要原理是添加一个 `iframe`，在里面加入外部链接。你可以直接写到头文件里面去，详情请见下面的yaml头文件的写法。
-
-```
----
-layout:     keynote
-iframe:     "http://huangxuan.me/js-module-7day/"
----
-```
-
-iframe在不同的设备中，将会自动的调整大小。保留内边距是为了让手机用户可以向下滑动，以及添加更多的内容。
-
-
-### Comment
-
-博客不仅支持 [Disqus](http://disqus.com) 评论系统,还加入了 [Gitalk](https://gitalk.github.io/) 评论系统，[支持 Markdwon 语法](https://guides.github.com/features/mastering-markdown/)，cool~
-
-#### Disqus
-
-优点：国际比较流行，界面也很大气、简洁，如果有人评论，还能实时通知，直接回复通知的邮件就行了；
-
-缺点：评论必须要去注册一个disqus账号，分享一般只有Facebook和Twitter，另外在墙内加载速度略慢了一点。想要知道长啥样，可以看以前的版本点[这里](http://brucezhaor.github.io/about.html) 最下面就可以看到。
-
-> Node：有很多人反映 Disqus 插件加载不出来，可能墙又架高了，有条件的话翻个墙就好了~
-
-**使用：**
-
-**首先**，你需要去注册一个Disqus帐号。**不要直接使用我的啊！**
-
-**其次**，你只需要在下面的 yaml 头文件中设置一下就可以了。
-
-```
-# 评论系统
-# Disqus（https://disqus.com/）
-disqus_username: qiubaiying
-```
-
-#### Gitalk
-
-优点：界面干净简洁，利用 Github issue API 做的评论插件，使用 Github 帐号进行登录和评论，最喜欢的支持 Markdown 语法，对于程序员来说真是太 cool 了。
-
-缺点：配置比较繁琐，每篇文章的评论都需要初始化。
-
-**使用：**
-
-参考我的这篇文章：[《为博客添加 Gitalk 评论插件》](http://qiubaiying.top/2017/12/19/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0-Gitalk-%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6/)
-
-
-### Analytics
-
-网站分析，现在支持百度统计和Google Analytics。需要去官方网站注册一下，然后将返回的code贴在下面：
-
-```
-# Baidu Analytics
-ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
-
-# Google Analytics
-ga_track_id: 'UA-49627206-1'            # 你用Google账号去注册一个就会给你一个这样的id
-ga_domain: huangxuan.me			# 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto。
-```
-
-### Customization
-
-如果你喜欢折腾，你可以去自定义这个模板的 Code。
-
-**如果你可以理解 `_include/` 和 `_layouts/`文件夹下的代码（这里是整个界面布局的地方），你就可以使用 Jekyll 使用的模版引擎 [Liquid](https://github.com/Shopify/liquid/wiki)的语法直接修改/添加代码，来进行更有创意的自定义界面啦！**
-
-### Header Image
-
-博客每页的标题底图是可以自己选的，看看几篇示例post你就知道如何设置了。
+First, download the necessary modules and install them into a docker image called `al-folio:Dockerfile` (this command will build an image which is used to run your website afterwards. Note that you only need to do this step once. After you have the image, you no longer need to do this anymore):
   
-标题底图的选取完全是看个人的审美了。每一篇文章可以有不同的底图，你想放什么就放什么，最后宽度要够，大小不要太大，否则加载慢啊。
 
-> 上传的图片最好先压缩，这里推荐 imageOptim 图片压缩软件，让你的博客起飞。
+```bash
+$ ./bin/docker_build_image.sh  
+```
 
-但是需要注意的是本模板的标题是**白色**的，所以背景色要设置为**灰色**或者**黑色**，总之深色系就对了。当然你还可以自定义修改字体颜色，总之，用github pages就是可以完全的个性定制自己的博客。
+Run the website!
 
-### SEO Title
+```bash
+$ ./bin/docker_run.sh
+```
 
-我的博客标题是 **“BY Blog”** 但是我想要在搜索的时候显示 **“柏荧的博客 | BY Blog”** ，这个就需要 SEO Title 来定义了。
+> To change port number, you can edit `docker_run.sh` file.
 
-其实这个 SEO Title 就是定义了<head><title>标题</title></head>这个里面的东西和多说分享的标题，你可以自行修改的。
+> If you want to update jekyll, install new ruby packages, etc., all you have to do is build the image again using `docker_build_image.sh`! It will download ruby and jekyll and install all ruby packages again from scratch.
 
-### 关于收到"Page Build Warning"的 Email
+</details>
 
-由于jekyll升级到3.0.x,对原来的 pygments 代码高亮不再支持，现只支持一种-rouge，所以你需要在 `_config.yml`文件中修改`highlighter: rouge`.另外还需要在`_config.yml`文件中加上`gems: [jekyll-paginate]`.
+---
 
-同时,你需要更新你的本地 jekyll 环境.
+#### Local Setup (Standard)
 
-使用`jekyll server`的同学需要这样：
+Assuming you have [Ruby](https://www.ruby-lang.org/en/downloads/) and [Bundler](https://bundler.io/) installed on your system (*hint: for ease of managing ruby gems, consider using [rbenv](https://github.com/rbenv/rbenv)*), first [fork](https://guides.github.com/activities/forking/) the theme from `github.com:alshedivat/al-folio` to `github.com:<your-username>/<your-repo-name>` and do the following:
 
-1. `gem update jekyll` # 更新jekyll
-2. `gem update github-pages` #更新依赖的包
+```bash
+$ git clone git@github.com:<your-username>/<your-repo-name>.git
+$ cd <your-repo-name>
+$ bundle install
+$ bundle exec jekyll serve
+```
 
-使用`bundle exec jekyll server`的同学在更新 jekyll 后，需要输入`bundle update`来更新依赖的包.
+Now, feel free to customize the theme however you like (don't forget to change the name!).
+After you are done, **commit** your final changes.
 
-> Note：
-> 可以使用 `jekyll -s` 命令在本地实时配置博客，提高效率。详见 [Jekyll.com](http://jekyllcn.com/)
+---
 
-参考文档：[using jekyll with pages](https://help.github.com/articles/using-jekyll-with-pages/) & [Upgrading from 2.x to 3.x](http://jekyllrb.com/docs/upgrading/2-to-3/)
+#### Deployment
+
+Deploying your website to [GitHub Pages](https://pages.github.com/) is the most popular option.
+Starting version [v0.3.5](https://github.com/alshedivat/al-folio/releases/tag/v0.3.5), **al-folio** will automatically re-deploy your webpage each time you push new changes to your repository! :sparkles:
+
+**For personal and organization webpages:**
+1. Rename your repository to `<your-github-username>.github.io` or `<your-github-orgname>.github.io`.
+2. In `_config.yml`, set `url` to `https://<your-github-username>.github.io` and leave `baseurl` empty.
+3. Set up automatic deployment of your webpage (see instructions below).
+4. Make changes, commit, and push!
+5. After deployment, the webpage will become available at `<your-github-username>.github.io`.
+
+**For project pages:**
+1. In `_config.yml`, set `url` to `https://<your-github-username>.github.io` and `baseurl` to `/<your-repository-name>/`.
+2. Set up automatic deployment of your webpage (see instructions below).
+3. Make changes, commit, and push!
+4. After deployment, the webpage will become available at `<your-github-username>.github.io/<your-repository-name>/`.
+
+**To enable automatic deployment:**
+1. Click on **Actions** tab and **Enable GitHub Actions**; do not worry about creating any workflows as everything has already been set for you.
+2. Make any other changes to your webpage, commit, and push. This will automatically trigger the **Deploy** action.
+3. Wait for a few minutes and let the action complete. You can see the progress in the **Actions** tab. If completed successfully, in addition to the `master` branch, your repository should now have a newly built `gh-pages` branch.
+4. Finally, in the **Settings** of your repository, in the Pages section, set the branch to `gh-pages` (**NOT** to `master`). For more details, see [Configuring a publishing source for your GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#choosing-a-publishing-source).
 
 
-## 致谢
+<details><summary>(click to expand) <strong>Manual deployment to GitHub Pages:</strong></summary>
 
-1. 这个模板是从这里 [Hux](https://github.com/Huxpro/huxpro.github.io) fork 的, 感谢这个作者。 
-2. 感谢 Jekyll、Github Pages 和 Bootstrap!
+If you need to manually re-deploy your website to GitHub pages, run the deploy script from the root directory of your repository:
+```bash
+$ ./bin/deploy
+```
+uses the `master` branch for the source code and deploys the webpage to `gh-pages`.
+
+</details>
+
+<details><summary>(click to expand) <strong>Deployment to another hosting server (non GitHub Pages):</strong></summary>
+
+If you decide to not use GitHub Pages and host your page elsewhere, simply run:
+```bash
+$ bundle exec jekyll build
+```
+which will (re-)generate the static webpage in the `_site/` folder.
+Then simply copy the contents of the `_site/` foder to your hosting server.
+
+**Note:** Make sure to correctly set the `url` and `baseurl` fields in `_config.yml` before building the webpage. If you are deploying your webpage to `your-domain.com/your-project/`, you must set `url: your-domain.com` and `baseurl: /your-project/`. If you are deploing directly to `your-domain.com`, leave `baseurl` blank.
+
+</details>
+
+<details><summary>(click to expand) <strong>Deployment to a separate repository (advanced users only):</strong></summary>
+
+**Note:** Do not try using this method unless you know what you are doing (make sure you are familiar with [publishing sources](https://help.github.com/en/github/working-with-github-pages/about-github-pages#publishing-sources-for-github-pages-sites)). This approach allows to have the website's source code in one repository and the deployment version in a different repository.
+
+Let's assume that your website's publishing source is a `publishing-source` sub-directory of a git-versioned repository cloned under `$HOME/repo/`.
+For a user site this could well be something like `$HOME/<user>.github.io`.
+
+Firstly, from the deployment repo dir, checkout the git branch hosting your publishing source.
+
+Then from the website sources dir (commonly your al-folio fork's clone):
+```bash
+$ bundle exec jekyll build --destination $HOME/repo/publishing-source
+```
+
+This will instruct jekyll to deploy the website under `$HOME/repo/publishing-source`.
+
+**Note:** Jekyll will clean `$HOME/repo/publishing-source` before building!
+
+The quote below is taken directly from the [jekyll configuration docs](https://jekyllrb.com/docs/configuration/options/):
+
+> Destination folders are cleaned on site builds
+>
+> The contents of `<destination>` are automatically cleaned, by default, when the site is built. Files or folders that are not created by your site will be removed. Some files could be retained by specifying them within the `<keep_files>` configuration directive.
+>
+> Do not use an important location for `<destination>`; instead, use it as a staging area and copy files from there to your web server.
+
+If `$HOME/repo/publishing-source` contains files that you want jekyll to leave untouched, specify them under `keep_files` in `_config.yml`.
+In its default configuration, al-folio will copy the top-level `README.md` to the publishing source. If you want to change this behaviour, add `README.md` under `exclude` in `_config.yml`.
+
+**Note:** Do _not_ run `jekyll clean` on your publishing source repo as this will result in the entire directory getting deleted, irrespective of the content of `keep_files` in `_config.yml`.
+
+</details>
+
+---
+
+#### Upgrading from a previous version
+
+If you installed **al-folio** as described above, you can upgrade to the latest version as follows:
+
+```bash
+# Assuming the current directory is <your-repo-name>
+$ git remote add upstream https://github.com/alshedivat/al-folio.git
+$ git fetch upstream
+$ git rebase v0.3.5
+```
+
+If you have extensively customized a previous version, it might be trickier to upgrade.
+You can still follow the steps above, but `git rebase` may result in merge conflicts that must be resolved.
+See [git rebase manual](https://help.github.com/en/github/using-git/about-git-rebase) and how to [resolve conflicts](https://help.github.com/en/github/using-git/resolving-merge-conflicts-after-a-git-rebase) for more information.
+If rebasing is too complicated, we recommend to re-install the new version of the theme from scratch and port over your content and changes from the previous version manually.
+
+---
+
+### FAQ
+
+Here are some frequently asked questions.
+If you have a different question, please ask using [Discussions](https://github.com/alshedivat/al-folio/discussions/categories/q-a).
+
+1. **Q:** After I fork and setup the repo, I get a deployment error.
+   Isn't the website supposed to correctly deploy automatically? <br>
+   **A:** Yes, if you are using release `v0.3.5` or later, the website will automatically and correctly re-deploy right after your first commit.
+   Please make some changes (e.g., change your website info in `_config.yml`), commit, and push.
+   Make sure to follow [deployment instructions](https://github.com/alshedivat/al-folio#deployment) in the previous section.
+   (Relevant issue: [209](https://github.com/alshedivat/al-folio/issues/209#issuecomment-798849211).)
+
+2. **Q:** I am using a custom domain (e.g., `foo.com`).
+   My custom domain becomes blank in the repository settings after each deployment.
+   How do I fix that? <br>
+   **A:** You need to add `CNAME` file to the `master` or `source` branch of your repository.
+   The file should contain your custom domain name.
+   (Relevant issue: [130](https://github.com/alshedivat/al-folio/issues/130).)
+
+3. **Q:** My webpage works locally.
+    But after deploying, it is not displayed correctly (CSS and JS is not loaded properly).
+    How do I fix that? <br>
+   **A:** Make sure to correctly specify the `url` and `baseurl` paths in `_config.yml`.
+   Set `url` to `https://<your-github-username>.github.io` or to `https://<your.custom.domain>` if you are using a custom domain.
+   If you are deploying a personal or organization website, leave `baseurl` blank.
+   If you are deploying a project page, set `baseurl: /<your-project-name>/`.
+
+4. **Q:** Atom feed doesn't work. Why?
+   <br>
+   **A:** Make sure to correctly specify the `url` and `baseurl` paths in `_config.yml`.
+  RSS Feed plugin works with these correctly set up fields: `title`, `url`, `description` and `author`.
+  Make sure to fill them in an appropriate way and try again.
+
+
+## Features
+
+### Publications
+
+Your publications page is generated automatically from your BibTex bibliography.
+Simply edit `_bibliography/papers.bib`.
+You can also add new `*.bib` files and customize the look of your publications however you like by editing `_pages/publications.md`.
+
+<p align="center"><img src="https://raw.githubusercontent.com/alshedivat/al-folio/master/assets/img/publications-screenshot.png" width=800></p>
+
+<details><summary>(click to expand) <strong>Author annotation:</strong></summary>
+
+In publications, the author entry for yourself is identified by string `scholar:last_name` and string array `scholar:first_name` in `_config.yml`:
+```
+scholar:
+  last_name: Einstein
+  first_name: [Albert, A.]
+```
+If the entry matches the last name and one form of the first names, it will be underlined.
+Keep meta-information about your co-authors in `_data/coauthors.yml` and Jekyll will insert links to their webpages automatically.
+The coauthor data format in `_data/coauthors.yml` is as follows,
+```
+"Adams":
+  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
+    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
+
+"Podolsky":
+  - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]
+    url: https://en.wikipedia.org/wiki/Boris_Podolsky
+
+"Rosen":
+  - firstname: ["Nathan", "N."]
+    url: https://en.wikipedia.org/wiki/Nathan_Rosen
+
+"Bach":
+  - firstname: ["Johann Sebastian", "J. S."]
+    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
+
+  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
+    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
+```
+If the entry matches one of the combinations of the last names and the first names, it will be highlighted and linked to the url provided.
+
+</details>
+
+<details><summary>(click to expand) <strong>Buttons (through custom bibtex keywords):</strong></summary>
+
+There are several custom bibtex keywords that you can use to affect how the entries are displayed on the webpage:
+   
+- `abbr`: Adds an abbreviation to the left of the entry. You can add links to these by creating a venue.yaml-file in the _data folder and adding entries that match.
+- `abstract`: Adds an "Abs" button that expands a hidden text field when clicked to show the abstract text
+- `arxiv`: Adds a link to the Arxiv website (Note: only add the arxiv identifier here - the link is generated automatically)
+- `bibtex_show`: Adds a "Bib" button that expands a hidden text field with the full bibliography entry
+- `html`: Inserts a "HTML" button redirecting to the user-specified link
+- `pdf`: Adds a "PDF" button redirecting to a specified file (if a full link is not specified, the file will be assumed to be placed in the /assets/pdf/ directory)
+- `supp`: Adds a "Supp" button to a specified file (if a full link is not specified, the file will be assumed to be placed in the /assets/pdf/ directory)
+- `blog`: Adds a "Blog" button redirecting to the specified link
+- `code`: Adds a "Code" button redirecting to the specified link
+- `poster`: Adds a "Poster" button redirecting to a specified file (if a full link is not specified, the file will be assumed to be placed in the /assets/pdf/ directory)
+- `slides`: Adds a "Slides" button redirecting to a specified file (if a full link is not specified, the file will be assumed to be placed in the /assets/pdf/ directory)
+- `website`: Adds a "Website" button redirecting to the specified link
+   
+You can implement your own buttons by editing the bib.html file.
+   
+</details>
+
+---
+
+### Collections
+
+This Jekyll theme implements `collections` to let you break up your work into categories.
+The theme comes with two default collections: `news` and `projects`.
+Items from the `news` collection are automatically displayed on the home page.
+Items from the `projects` collection are displayed on a responsive grid on projects page.
+
+<p align="center"><img src="https://raw.githubusercontent.com/alshedivat/al-folio/master/assets/img/projects-screenshot.png" width=700></p>
+
+You can easily create your own collections, apps, short stories, courses, or whatever your creative work is.
+To do this, edit the collections in the `_config.yml` file, create a corresponding folder, and create a landing page for your collection, similar to `_pages/projects.md`.
+
+---
+
+### Layouts
+
+**al-folio** comes with stylish layouts for pages and blog posts.
+
+#### The iconic style of Distill
+
+The theme allows you to create blog posts in the [distill.pub](https://distill.pub/) style:
+
+<p align="center"><a href="https://alshedivat.github.io/al-folio/blog/2018/distill/" target="_blank"><img src="https://raw.githubusercontent.com/alshedivat/al-folio/master/assets/img/distill-screenshot.png" width=700></a></p>
+
+For more details on how to create distill-styled posts using `<d-*>` tags, please refer to [the example](https://alshedivat.github.io/al-folio/blog/2018/distill/).
+
+#### Full support for math & code
+
+**al-folio** supports fast math typesetting through [MathJax](https://www.mathjax.org/) and code syntax highlighting using [GitHub style](https://github.com/jwarby/jekyll-pygments-themes):
+
+<p align="center">
+<a href="https://alshedivat.github.io/al-folio/blog/2015/math/" target="_blank"><img src="https://raw.githubusercontent.com/alshedivat/al-folio/master/assets/img/math-screenshot.png" width=400></a>
+<a href="https://alshedivat.github.io/al-folio/blog/2015/code/" target="_blank"><img src="https://raw.githubusercontent.com/alshedivat/al-folio/master/assets/img/code-screenshot.png" width=400></a>
+</p>
+
+#### Photos
+
+Photo formatting is made simple using [Bootstrap's grid system](https://getbootstrap.com/docs/4.4/layout/grid/).
+Easily create beautiful grids within your blog posts and project pages:
+
+<p align="center">
+  <a href="https://alshedivat.github.io/al-folio/projects/1_project/">
+    <img src="https://raw.githubusercontent.com/alshedivat/al-folio/master/assets/img/photos-screenshot.png" width="75%">
+  </a>
+</p>
+
+---
+
+### Other features
+
+#### GitHub repositories and user stats
+**al-folio** uses [github-readme-stats](https://github.com/anuraghazra/github-readme-stats) to display GitHub repositories and user stats on the the `/repositories/` page.
+
+Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories to the the `/repositories/` page.
+
+You may also use the following codes for displaying this in any other pages.
+```
+<!-- code for GitHub users -->
+{% if site.data.repositories.github_users %}
+<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
+  {% for user in site.data.repositories.github_users %}
+    {% include repository/repo_user.html username=user %}
+  {% endfor %}
+</div>
+{% endif %}
+
+<!-- code for GitHub repositories -->
+{% if site.data.repositories.github_repos %}
+<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
+  {% for repo in site.data.repositories.github_repos %}
+    {% include repository/repo.html repository=repo %}
+  {% endfor %}
+</div>
+{% endif %}
+```
+
+#### Theming
+Six beautiful theme colors have been selected to choose from.
+The default is purple, but you can quickly change it by editing `$theme-color` variable in the `_sass/_themes.scss` file.
+Other color variables are listed there as well.
+
+#### Social media previews
+**al-folio** supports preview images on social media.
+To enable this functionality you will need to set `serve_og_meta` to `true` in your `_config.yml`.
+Once you have done so, all your site's pages will include Open Graph data in the HTML head element.
+
+You will then need to configure what image to display in your site's social media previews.
+This can be configured on a per-page basis, by setting the `og_image` page variable.
+If for an individual page this variable is not set, then the theme will fall back to a site-wide `og_image` variable, configurable in your `_config.yml`.
+In both the page-specific and site-wide cases, the `og_image` variable needs to hold the URL for the image you wish to display in social media previews.
+
+#### Atom (RSS-like) Feed
+It generates an Atom (RSS-like) feed of your posts, useful for Atom and RSS readers.
+The feed is reachable simply by typing after your homepage `/feed.xml`.
+E.g. assuming your website mountpoint is the main folder, you can type `yourusername.github.io/feed.xml`
+
+## Contributing
+
+Contributions to al-folio are very welcome!
+Before you get started, please take a look at [the guidelines](CONTRIBUTING.md).
+
+If you would like to improve documentation, add your webpage to the list below, or fix a minor inconsistency or bug, please feel free to send a PR directly to `master`.
+For more complex issues/bugs or feature requests, please open an issue using the appropriate template.
+
+### Core Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="http://maruan.alshedivat.com"><img src="https://avatars.githubusercontent.com/u/2126561?v=4" width="100px;" alt=""/><br /><sub><b>Maruan</b></sub></a></td>
+    <td align="center"><a href="http://rohandebsarkar.github.io"><img src="https://avatars.githubusercontent.com/u/50144004?v=4" width="100px;" alt=""/><br /><sub><b>Rohan Deb Sarkar</b></sub></a></td>
+    <td align="center"><a href="https://amirpourmand.ir"><img src="https://avatars.githubusercontent.com/u/32064808?v=4" width="100px;" alt=""/><br /><sub><b>Amir Pourmand</b></sub></a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## License
 
-遵循 MIT 许可证。有关详细,请参阅 [LICENSE](https://github.com/qiubaiying/qiubaiying.github.io/blob/master/LICENSE)。
+The theme is available as open source under the terms of the [MIT License](https://github.com/alshedivat/al-folio/blob/master/LICENSE).
+
+Originally, **al-folio** was based on the [\*folio theme](https://github.com/bogoli/-folio) (published by [Lia Bogoev](https://liabogoev.com) and under the MIT license).
+Since then, it got a full re-write of the styles and many additional cool features.
 

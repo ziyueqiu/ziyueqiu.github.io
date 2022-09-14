@@ -1,0 +1,94 @@
+- title: General Information
+  type: map
+  contents:
+    - name: Full Name
+      value: Ziyue Qiu
+    - name: Date of Birth
+      value: Jan 2002
+    - name: Languages
+      value: English, Mandarin
+
+- title: Education
+  type: time_table
+  contents:
+    - title: PhD
+      institution: Carnegie Mellon University (CMU), Pittsburgh, USA
+      year: 2022
+      description:
+        - Computer Science
+        - Advisor TBD
+    - title:  Bachelor
+      institution: University of Science and Technology of China (USTC), Hefei, China
+      year: 2018
+      description:
+        - Computer Science and Technology
+        - Advisor Cheng Li
+        - GPA 3.92/4.3
+        - title: Special Honors
+          contents:
+            - Special Class for the Gifted Young (under 16 years old)
+            - Hua Xia Talent Program
+
+- title: Experience
+  type: time_table
+  contents:
+    # - title: Professor of Theoretical Physics
+    #   institution: Institute for Advanced Study, Princeton University
+    #   year: 1933 - 1955
+    #   description:
+    #     - Description 1.
+    #     - Description 2.
+    #     - title: Description 3.
+    #       contents:
+    #         - Sub-description 1.
+    #         - Sub-description 2.
+    - title: Research Intern
+      institution: System Group, Microsoft Research Asia
+      year: 2021-2022
+      description:
+        - Worked on caching project
+
+    - title: Undergraduate Researcher
+      institution: Advanced Data Systems Laboratory (ADSL), USTC, Hefei, China
+      year: 2021-2022
+
+
+# - title: Open Source Projects
+#   type: time_table
+#   contents:
+#     - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
+#       year: 2015-now
+#       description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+
+- title: Honors and Awards
+  type: time_table
+  contents:
+    - year: 2021
+      items: 
+        - China National Scholarship (Top 1%)
+    - year: 2020
+      items: 
+        - SGY Sihua Scholarship (4/50)
+        - Hua Xia Talent Program First Prize Scholarship
+        - Zhong Hai Memorial Scholarship (2/200)
+    - year: 2019
+      items: 
+        - SGY Class of 87 Innovation Scholarship (10/1,000) 
+        - Chen Guoliang Scholarship (Top 10%) 
+
+# - title: Academic Interests
+#   type: nested_list
+#   contents:
+#     - title: Topic 1.
+#       items: 
+#         - Description 1.
+#         - Description 2.
+#     - title: Topic 2.
+#       items:
+#         - Description 1.
+#         - Description 2.
+
+- title: Other Interests
+  type: list
+  contents:
+    - <u>Hobbies:</u> Ultimate Frisbee, Sudoku, Criminology, Anime

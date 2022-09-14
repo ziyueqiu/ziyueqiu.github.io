@@ -1,57 +1,31 @@
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ site.description }}">
-    <meta name="keywords"  content="{{ site.keyword }}">
-    <meta name="theme-color" content="{{ site.chrome-tab-theme-color }}">
+    <!-- Metadata, OpenGraph and Schema.org -->
+    {% include metadata.html %}
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@{{ site.bootstrap.version }}/dist/css/bootstrap.min.css" rel="stylesheet" integrity="{{ site.bootstrap.integrity.css }}" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@{{ site.mdb.version }}/css/mdb.min.css" integrity="{{ site.mdb.integrity.css }}" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@{{ site.fontawesome.version }}/css/all.min.css" integrity="{{ site.fontawesome.integrity }}" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@{{ site.academicons.version }}/css/academicons.min.css" integrity="{{ site.academicons.integrity }}" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/{{ site.highlight_theme_light | append: '.css' }}" media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+    {% if site.icon.size < 3 %}
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>{{ site.icon }}</text></svg>">
+    {% elsif site.icon != blank %}
+    <link rel="shortcut icon" href="{{ site.icon | prepend: '/assets/img/' | relative_url}}"/>
+    {% endif %}
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
     
-    <title>{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}</title>
+    <!-- Dark Mode -->
+    {% if site.enable_darkmode %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/{{ site.highlight_theme_dark | append: '.css' }}" media="none" id="highlight_theme_dark" />
 
-    <!-- Web App Manifest -->
-    <link rel="manifest" href="{{ site.baseurl }}/pwa/manifest.json">
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ site.baseurl }}/img/myphoto.jpeg">
-
-    <!-- Safari Webpage Icon    by-BY -->
-    <!-- <link rel="apple-touch-icon" href="{{ site.baseurl }}/img/apple-touch-icon.png"> -->
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | prepend: site.baseurl }}">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ "/css/hux-blog.min.css" | prepend: site.baseurl }}">
-
-    <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="{{ "/css/syntax.css" | prepend: site.baseurl }}">
-
-    <!-- <link rel="stylesheet" href="{{ "/css/rouge.css" | prepend: site.baseurl }}"> -->
-
-    <!-- Custom Fonts -->
-    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-    <!-- Hux change font-awesome CDN to qiniu -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-
-    <!-- Hux Delete, sad but pending in China
-    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
-    css'>
-    -->
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- ga & ba script hoook -->
-    <script></script>
-</head>
+    <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/dark_mode.js' | relative_url }}"></script>
+    {% endif %}
