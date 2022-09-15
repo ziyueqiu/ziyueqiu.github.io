@@ -30,4 +30,6 @@ nav_order: 6
 
 [Keyu Tao @ USTC](https://www.taoky.moe/) is a great CS person and enjoys anime as well. Although [he doesn't like self-introduction](https://blog.taoky.moe/about/), I do this for him :) I am such an angel!!
 
-[Mingkuan Xu @ CMU](https://mingkuan.taichi.graphics/) is so good in board games that we all hope to win him once :( BTW, I really enjoy discussing finances questions with him.
+[Mingkuan Xu @ CMU](https://mingkuan.taichi.graphics/) is so good at board games that we all dream to win him once :( BTW, I really enjoy discussing finance questions with him.
+
+[Yihang Yao @ CMU](https://sites.google.com/view/yaoyiyao/) is such a great Mechanical Engineering student w/o publication (just kidding) like me :(
