@@ -18,7 +18,7 @@ nav_order: 6
 
 [Zihan Zheng](https://zhengzihan.com/) works on security and he knows many things. Not just because he is older than me :)
 
-[Wei Fan @ Upenn](http://home.ustc.edu.cn/~luke2001/) is a Statistics PhD and hope people can [push his friends](http://home.ustc.edu.cn/~luke2001/push.html) (e.g. me).
+[Wei Fan @ Upenn](http://home.ustc.edu.cn/~luke2001/) is a Statistics PhD who hopes people can [push his friends](http://home.ustc.edu.cn/~luke2001/push.html) (e.g. me).
 
 [Bowen Li @ CMU](https://jaraxxus-me.github.io/) is a Robotics PhD with many papers, too many compared with System PhD :(
 
@@ -26,6 +26,6 @@ nav_order: 6
 
 [Zhengyang Geng @ CMU](https://gsunshine.github.io/) is a warm person to be friends with (especially when he avoids me to become the last one in Dominion games through becoming the last one himself), and I have to mention that he has a wife (!)
 
-[Alec Sun @ CMU]() plays 'frisbee' w/o 'ultimate', so sad! And he keeps correcting my English speaking and writing, so sweet :) Hope his mandarin improves with me around.
+[Alec Sun @ CMU](https://sites.google.com/view/alecsun/home) plays 'frisbee' w/o 'ultimate', so sad! And he keeps correcting my English speaking and writing, so sweet :) Hope his mandarin will improve with me around.
 
 [Keyu Tao @ USTC](https://www.taoky.moe/) is a great CS person and enjoys anime as well. Although [he doesn't like self-introduction](https://blog.taoky.moe/about/), I do this for him :) What an angel am I!!
