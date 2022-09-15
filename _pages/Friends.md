@@ -8,13 +8,13 @@ nav_order: 6
 ---
 
 
-[Liwei Luo @ UCI](https://loliw.moe/) is a CS student who love daydreaming :). I have to mention that I really enjoy discussing Feminism with her!
+[Liwei Luo @ UCI](https://loliw.moe/) is a CS student who loves daydreaming :). I have to mention that I really enjoy discussing Feminism with her!
 
-[Ruomin Huang @ USTC](https://fockee.github.io/) is an elegant researcher, and I am pretty sure he would agree with this statement :) Good luck to his 2023 Fall application.
+[Ruomin Huang @ USTC](https://fockee.github.io/) is an elegant researcher, and I am pretty sure he would agree with this statement :) Good luck to him on 2023 Fall applications.
 
-[Beining Wu @ USTC](https://beiningwu7.github.io/) is hard-working on research. Good luck to his 2023 Fall application.
+[Beining Wu @ USTC](https://beiningwu7.github.io/) is a hard-working researcher. Good luck to him on 2023 Fall applications.
 
-[Zhanghan Wang @ NYU](https://rabbitwhite1.github.io/) is a system PhD with Girlfriend. So good :(
+[Zhanghan Wang @ NYU](https://rabbitwhite1.github.io/) is a system PhD with Girlfriend and Happiness. So good :(
 
 [Zihan Zheng](https://zhengzihan.com/) works on security and he knows many things. Not just because he is older than me :)
 
@@ -24,8 +24,10 @@ nav_order: 6
 
 [Yiwei Yuan @ USTC](https://yyw.moe/) is a totoro (joking) and he believes he is a research Trash (definitely not!)
 
-[Zhengyang Geng @ CMU](https://gsunshine.github.io/) is a warm person to be friends with (especially when he avoids me to become the last one in Dominion games through becoming the last one himself), and I have to mention that he has a wife (!)
+[Zhengyang Geng @ CMU](https://gsunshine.github.io/) is a warm person to be friends with (especially when he prevents me from becoming last place in Dominion games by becoming the last one himself), and I have to mention that he has a wife (! happy family)
 
-[Alec Sun @ CMU](https://sites.google.com/view/alecsun/home) plays 'frisbee' w/o 'ultimate', so sad! And he keeps correcting my English speaking and writing, so sweet :) Hope his mandarin will improve with me around.
+[Alec Sun @ CMU](https://sites.google.com/view/alecsun/home) plays 'frisbee' so good and believes himself a better frisbee teacher than me! And he keeps correcting my English speaking and writing (including this page), so sweet :) Hope his Mandarin will improve with me around.
 
-[Keyu Tao @ USTC](https://www.taoky.moe/) is a great CS person and enjoys anime as well. Although [he doesn't like self-introduction](https://blog.taoky.moe/about/), I do this for him :) What an angel am I!!
+[Keyu Tao @ USTC](https://www.taoky.moe/) is a great CS person and enjoys anime as well. Although [he doesn't like self-introduction](https://blog.taoky.moe/about/), I do this for him :) I am such an angel!!
+
+[Mingkuan Xu @ CMU](https://mingkuan.taichi.graphics/) is so good in board games that we all hope to win him once :( BTW, I really enjoy discussing finances questions with him.
