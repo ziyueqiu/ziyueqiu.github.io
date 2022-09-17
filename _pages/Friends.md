@@ -33,3 +33,5 @@ nav_order: 6
 [Mingkuan Xu @ CMU](https://mingkuan.taichi.graphics/) is so good at board games that we all dream to win him once :( BTW, I really enjoy discussing finance questions with him.
 
 [Yihang Yao @ CMU](https://sites.google.com/view/yaoyiyao/) is such a great Mechanical Engineering student w/o publication (just kidding) like me :(
+
+[Kaiyang Zhao @ CMU](https://www.cs.cmu.edu/~kaiyang2/) is a systems PhD (!) who prefers to stay alone in some time (most time maybe), so we sometimes just run away from a social event together :)
