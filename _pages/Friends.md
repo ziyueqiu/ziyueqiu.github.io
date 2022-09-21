@@ -35,3 +35,5 @@ nav_order: 6
 [Yihang Yao @ CMU](https://sites.google.com/view/yaoyiyao/) is such a great Mechanical Engineering student w/o publication (just kidding) like me :(
 
 [Kaiyang Zhao @ CMU](https://www.cs.cmu.edu/~kaiyang2/) is a systems PhD (!) who prefers to stay alone in some time (most time maybe), so we sometimes just run away from a social event together :)
+
+[Wenzhuo Xu @ CMU](https://wenzhuo.webflow.io/) is able to gain high scores in Toefl (118/30 in speaking) and other exams but don't know how to 'gain' his first publication till now (just joking, he is great like Yihang).
