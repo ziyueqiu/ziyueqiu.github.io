@@ -26,7 +26,7 @@ nav_order: 6
 
 [Zhengyang Geng @ CMU](https://gsunshine.github.io/) is a warm person to be friends with (especially when he prevents me from becoming last place in Dominion games by becoming the last one himself), and I have to mention that he has a wife (! happy family)
 
-[Alec Sun @ CMU](https://sites.google.com/view/alecsun/home) plays 'frisbee' so good and believes himself a better frisbee teacher than me! And he keeps correcting my English speaking and writing (including this page), so sweet :) Hope his Mandarin will improve with me around.
+[Alec Sun @ CMU](https://sites.google.com/view/alecsun/home) plays 'frisbee' so well and believes himself a better frisbee teacher than me! And he keeps correcting my English speaking and writing (including this page), so sweet :) Hope his Mandarin will improve with me around.
 
 [Keyu Tao @ USTC](https://www.taoky.moe/) is a great CS person and enjoys anime as well. Although [he doesn't like self-introduction](https://blog.taoky.moe/about/), I do this for him :) I am such an angel!!
 
