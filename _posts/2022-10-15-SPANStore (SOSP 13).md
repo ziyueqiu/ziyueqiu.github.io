@@ -8,6 +8,8 @@ categories: PaperReading
 comments: true
 ---
 
+[SPANStore: cost-effective geo-replicated storage spanning multiple cloud services](https://dl.acm.org/doi/10.1145/2517349.2522730)
+
 这篇文章的核心是通过 span multiple cloud provides 获得两个好处：1) increase **geographical density** of data centers; 2) minimze cost by **exploiting pricing discrepancies** across providers
 
 ## Abstract
@@ -58,7 +60,7 @@ Question:
 
 lecture 里面放了一张图：
 
-<img src="fig/SPANStore-fig3.png" alt="fig3" style="zoom: 50%;" />
+<img src="../assets/img/fig/SPANStore-fig3.png" alt="fig3" style="zoom: 50%;" />
 
 关于云服务商的背景，推荐一波 [From Cloud Computing to Sky Computing](https://sigops.org/s/conferences/hotos/2021/papers/hotos21-s02-stoica.pdf) \[HotOS 21\]，有讨论 cloud 的一些特点。
 
@@ -88,13 +90,13 @@ Lower latencies & Lower cost
 
 从写论文角度看，这个图画的不错
 
-![Figure1](./fig/SPANStore-fig1.png)
+![Figure1](../assets/img/fig/SPANStore-fig1.png)
 
 Question: **为什么 a & b 图（c & d）的红色长得不一样？**
 
 ## Overview
 
-<img src="fig/SPANStore-fig2.png" alt="image-20221016172137294" style="zoom: 50%;" />
+<img src="../assets/img/fig/SPANStore-fig2.png" alt="fig2" style="zoom: 50%;" />
 
 Mark: PMan = Placement Manager
 
