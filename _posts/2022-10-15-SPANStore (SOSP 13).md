@@ -18,7 +18,7 @@ comments: true
 
 - storage services in geographically distributed data centers
 - minimize cost（和纯 performance 视角不同）
-- trade off replication with 'higher storage' and **data propagation costs**, 还需要满足 fault tolerance and consistency requirements
+- trade off replication with 'higher storage' and **data propagation costs** (i.e. transfer cost), 还需要满足 fault tolerance and consistency requirements
 -  also optimize 'compute resources' used on tasks such as two-phase locking and data propagation
 
 到这里有几个疑问在我心里：
@@ -129,6 +129,8 @@ Questions:
 
 **stationary**: 关于 weekly，分析每个**小时**（也是每个epoch）与一周前的那个小时的 relative difference，发现虽然单用户指标不是很好看，但是当 "consider those users whose timelines have their access set as all EC2 data centers in US"**（没懂这个 category 是怎么分的）**，relative difference 恒小于 50%。
 
+intuitively: 某个用户不一定稳定在周一早上 7 点触发 GET request，但是用户群整体可能有相对稳定（50% relative difference in this paper）的访问量。
+
 好处：enable more accurate prediction based on historical workload measurements
 
 ([11] Volley: Automated data placement for geo-distributed cloud services [NSDI 11], and [17] Characterizing, modeling, and generating workload spikes for stateful services [SoCC 10])
@@ -143,11 +145,11 @@ Questions:
 
 不让所有 data center 拥有全部的数据的原因：1）storage cost 太高；2）PUT 需要对所有备份做一遍，PUT request cost 太高。
 
-Solution: determine the replication policy for a given access set AS as a mixed integer program.（整型规划！）
+Solution: determine the replication policy for a given access set AS as a mixed integer program.（整型规划，这里要解的是0/1规划：whether a data center is GET/PUT replica）
 
 Appendix A:
 
-- 因为 fault tolerance = f，所以要有 f+1 个 replica；
+- 因为 fault tolerance = f，所以要有 f+1 个 replica（这里是说有 f+1 个备份就可以支持 f 个 data center 里内容其实不是 up-to-date 的，倒不是说 corruption）；
 - 因为 PUT/GET replica set 不需要重合也确实不重合，所以它们的并集内的 data center 都有全部的 object；
 - 对于 eventual consistency，PUT 只需要同步到某一个 replica，之后都异步做即可；
 - 有时候多几跳（relay via other data centers）反而比直接传输能节省 networking cost。
@@ -190,7 +192,7 @@ Strong consistency: "quorum sets"
 
 Question:
 
-- 但是 policy 的变化是某个 Access Set 在 Data center 之间整体迁移的大动作，这里凭什么只讨论 first operation 呢？
+- **但是 policy 的变化是某个 Access Set 在 Data center 之间整体迁移的大动作，这里凭什么只讨论 first operation 呢？**
 
 
 ## Implementation
@@ -228,6 +230,8 @@ Note: application on EC2's data centers; SPANStore's storage services offered by
 Figure 9 画的不好看清楚。
 
 我没有细看每条线的对比，我感觉和 Single or Everywhere 比，赢了很合理；和 single-cloud 比，应该是赢在 data center 选择更多和价格差异上。
+
+补充一下：这个工作不止是可以优化拓扑结构，也可以减少 replica 的绝对数量（选择多了，也许一个 DC 可以保证原先不得不用两个 DC 才能做到的 SLO）；cost 是 goal 的话，资源的节省有可能伴随 cost 产生。
 
 ### Impact of aggregation of objects
 
@@ -275,5 +279,5 @@ killer application 来了！
 - 没有开源
 - 虽然 related work 不够 convincing（比如我总觉得这种整型优化肯定有人做了的，但是却没有比较到），但是如果我是 PC，我会觉得这个工作还是填补了空缺的、值得 accept 的
 - 整篇看下来不细想的话没啥问题，但是一细想就发现很多细节都不知道是如何做的，或者有一些假设是有可能不合适的。
-- 不知道后续有没有足够有意思的 follow-up。
+- 不知道后续有没有足够有意思的 follow-up（比如应用在了哪里）。
 - 我还看见[一篇介绍 SPANStore 的文章](http://dsrg.pdos.csail.mit.edu/2013/09/30/spanstore/)（来自 MIT）。一段有意思的评价：It seems that there is still a huge burden on developer to provide the correct inputs to PMan so that PMan can provide the best replication policy. This doesn’t seem to reduce the complexity involved. A lot of the paper relies on the objective function, and there are not many new distributed system concepts.
