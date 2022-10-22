@@ -60,7 +60,7 @@ Question:
 
 lecture 里面放了一张图：
 
-<img src="../assets/img/fig/SPANStore-fig3.png" alt="fig3" style="zoom: 50%;" />
+{% include figure.html path="assets/img/fig/SPANStore-fig3.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 关于云服务商的背景，推荐一波 [From Cloud Computing to Sky Computing](https://sigops.org/s/conferences/hotos/2021/papers/hotos21-s02-stoica.pdf) \[HotOS 21\]，有讨论 cloud 的一些特点。
 
@@ -90,13 +90,12 @@ Lower latencies & Lower cost
 
 从写论文角度看，这个图画的不错
 
-![Figure1](../assets/img/fig/SPANStore-fig1.png)
+{% include figure.html path="assets/img/fig/SPANStore-fig1.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 Question: **为什么 a & b 图（c & d）的红色长得不一样？**
 
 ## Overview
-
-<img src="../assets/img/fig/SPANStore-fig2.png" alt="fig2" style="zoom: 50%;" />
+{% include figure.html path="assets/img/fig/SPANStore-fig2.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 Mark: PMan = Placement Manager
 
