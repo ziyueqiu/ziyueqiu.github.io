@@ -38,4 +38,4 @@ nav_order: 6
 
 [Wenzhuo Xu @ CMU](https://wenzhuo.webflow.io/) is able to gain high scores in Toefl (118/30 in speaking) and other exams but don't know how to 'gain' his first publication till now (just joking, he is great like Yihang).
 
-[Liu (Lynn) Shu @ UCB](https://lynnliu030.github.io/) is a [hobbyist photographer](https://lynnliu030.github.io/photography/) and has so many things in common with me :) (e.g. research background). Hope we both have bright future.
+[Shu (Lynn) Liu @ UCB](https://lynnliu030.github.io/) is a [hobbyist photographer](https://lynnliu030.github.io/photography/) and a Systems PhD who has so many things in common with me :) (e.g. research interest and background). Hope we both have bright future.
