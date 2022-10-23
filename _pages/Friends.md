@@ -37,3 +37,5 @@ nav_order: 6
 [Kaiyang Zhao @ CMU](https://www.cs.cmu.edu/~kaiyang2/) is a systems PhD (!) who prefers to stay alone in some time (most time maybe), so we sometimes just run away from a social event together :)
 
 [Wenzhuo Xu @ CMU](https://wenzhuo.webflow.io/) is able to gain high scores in Toefl (118/30 in speaking) and other exams but don't know how to 'gain' his first publication till now (just joking, he is great like Yihang).
+
+[Liu (Lynn) Shu @ UCB](https://lynnliu030.github.io/) is a [hobbyist photographer](https://lynnliu030.github.io/photography/) and has so many things in common with me :) (e.g. research background). Hope we both have bright future.

@@ -12,6 +12,8 @@ comments: true
 
 这篇文章的核心是通过 span multiple cloud provides 获得两个好处：1) increase **geographical density** of data centers; 2) minimze cost by **exploiting pricing discrepancies** across providers
 
+补充：选择空间从几个到了20个这种感觉。
+
 ## Abstract
 
 从这里看到的几个要点：
@@ -154,6 +156,10 @@ Appendix A:
 - 对于 eventual consistency，PUT 只需要同步到某一个 replica，之后都异步做即可；
 - 有时候多几跳（relay via other data centers）反而比直接传输能节省 networking cost。
 
+Question:
+
+- Assume PUT 可以多几跳，但是 GET 是直接从 replica 获得，为什么不考虑 relay 呢？有意思的 Related work: [Skyplane: Optimizing Transfer Cost and Throughput Using Cloud-Aware Overlays](https://arxiv.org/pdf/2210.07259.pdf)
+
 ### Strong consistency
 
 rely on quorum consistency
@@ -211,7 +217,7 @@ On Amazon S3, Microsoft Azure, and Google Cloud Storage
 
 Question:
 
-- 为什么 GET 和 PUT 的函数输入不一样？
+- ~~为什么 GET 和 PUT 的函数输入不一样？~~ 可能因为 PUT 有可能是新的
 - "uses DNS to discover the local memcached cluster" 从何说起？
 
 ## Evaluation
@@ -247,7 +253,7 @@ Figure 9 画的不好看清楚。
 
 ### Scalability of PlacementManager
 
-"PMan needs to compute the replication policy for all access sets; there are $2^N$ access sets for an application deployed across N data centers."
+"PMan needs to compute the replication policy for all access sets; there are 2^N access sets for an application deployed across N data centers."
 
 CPU 算力只能支持 15 及以下数量的 data center，但实际上不需要每个 epoch 都重新计算（workload 变了再说）。
 
