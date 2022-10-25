@@ -51,7 +51,7 @@ Overlay path 有可能更**快**，因为这跟每两点之间的 bandwidth 支�
 
 Question:
 
-- 不明白怎么做到比原生支持的传输要快 X 倍。难道是因为可以通过 overlay 增加 bandwidth？
+- ~~不明白怎么做到比原生支持的传输要快 X 倍。难道是因为可以通过 overlay 增加 bandwidth？~~ 是的，比如多开 VM 用来传输
 
 ## Background
 
@@ -118,11 +118,13 @@ Skyplane's planner takes into account a limit on the number of instances that a 
 
 Question:
 
-- 如果目标是 minimize cost，有什么情况会比直接点到点传输的 egress cost 要便宜？
+- ~~如果目标是 minimize cost，有什么情况会比直接点到点传输的 egress cost 要便宜？~~ compression or 每个 provider 的不同结点也可能不一样
 
 Objective（这段分析很有意思）：
 
 {% include figure.html path="assets/img/fig/Skyplane-snapshot1.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+
+不对称性："We can approximate a solution by solving for the minimum cost transfer plan at a range of many throughput goals. The result of this procedure is a Pareto frontier curve (as shown in Fig. 9c). A throughput maximizing solution can be extracted from this curve. The quality of approximate solution will depend on how many samples are used."
 
 ## Implementation of Skyplane
 
@@ -139,8 +141,7 @@ Objective（这段分析很有意思）：
 
 Question:
 
-- "In certain cases, Azure AzCopy performs about as well as Skyplane. We chose the koreacentral region because we expected the greatest improvements from the overlay in that region; however, storage overheads (the
-“thatched” regions of the bars), not networking overheads, dominated the runtime. It is possible that AzCopy avoids the Azure Blob Storage I/O overhead that dominates Skyplane’s transfer time by leveraging Azure’s Copy Blob From URL API call to download data directly into the servers running Azure Blob Storage [11]." **没懂**
+- "In certain cases, Azure AzCopy performs about as well as Skyplane. We chose the koreacentral region because we expected the greatest improvements from the overlay in that region; however, storage overheads (the “thatched” regions of the bars), not networking overheads, dominated the runtime. It is possible that AzCopy avoids the Azure Blob Storage I/O overhead that dominates Skyplane’s transfer time by leveraging Azure’s Copy Blob From URL API call to download data directly into the servers running Azure Blob Storage [11]." 好像是说内部已经有优化做的比较好了
 - Figure7 的 egress limit 是怎么设置的？为什么 limit 是一个 bandwidth？
 - Skyplane w/o overlay 比 baseline 多了些什么来着？price model？
 
@@ -150,4 +151,4 @@ Question:
 
 ## 评论
 
-[TBD]
+本文整体有倾向是多花一点钱，能提升极大的 bandwidth，其实并不能怎么关注省钱。
