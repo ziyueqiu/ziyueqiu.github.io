@@ -10,7 +10,7 @@ comments: true
 
 [CloudCache: CloudCache: On-demand Flash Cache Management for Cloud Computing](https://www.usenix.org/conference/fast16/technical-sessions/presentation/arteaga)
 
-我关心 caching for cloud computing 有什么需要在意的，虽然这篇看起来主要是关注 Flash。
+我关心 caching for cloud computing 有什么需要在意的，但是这篇主要是关注 Flash cache，而且还是 private cloud。
 
 ## Abstract
 
@@ -30,12 +30,12 @@ comments: true
 
 看到这里有的 Questions:
 
-- 如何识别 "data with good temporal locality"
-- 什么是 "cache demand"
+- ~~如何识别 "data with good temporal locality"~~ 这里的意思就是 RWS
+- ~~什么是 "cache demand"~~ WS/RWS
 - "online prediction" 开销如何
-- migration 具体怎么做
-- ~~什么是 "impact to co-hosted VMs"~~ 因为要向外 migrate 数据到 co-hosted，所以有可能对 co-hosted 的性能有负面影响
-- ~~什么样的 "real-world traces"~~ one-day traces from their prior work
+- ~~migration 具体怎么做~~
+- ~~什么是 "impact to co-hosted VMs"~~ 因为要向外 migrate 数据到 co-hosted (Flash write)，所以有可能对 co-hosted 的性能有负面影响
+- ~~什么样的 "real-world traces"~~ several-month traces from their prior work
 
 ## Introduction
 
@@ -82,7 +82,7 @@ Reuse Working Set, RWS_N (t, T), which is defined as the set of distinct (addres
   - real-time based window (x number of accesses made by the process，因为可能 VM 比较空闲的时候，非常长时间用不到 cache，这个 window 一直不切换，高估了 cache demand 也没有及时调整)
 - How to decide the size of the time window?
   - 太大可能放了太多过去的情况进入考虑，太小可能低估了 cache demand
-  - profile 一段时间，根据绘制出来的图，选择 "knee point" size，如果没有 "knee point"，就选相对小的，下图例子就是选一个 24-48h 之间的数字
+  - profile 一段时间，根据绘制出来的图，选择 "knee point" size，如果没有 "knee point"，就选相对小的，下图例子应该选一个 24-48h 之间的数字
 
 {% include figure.html path="assets/img/fig/CloudCache-fig3.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
@@ -92,7 +92,7 @@ Reuse Working Set, RWS_N (t, T), which is defined as the set of distinct (addres
 
 - The success of RWSS-based cache allocation also depends on whether we can accurately **predict** the cache demand of the next time window **based on the RWSS values observed from the previous windows**.
 - 具体方法：To address this problem, we consider the *classic exponential smoothing and double exponential smoothing methods*. The former requires a smoothing parameter α, and the latter requires an additional trending parameter β . The values of these parameters can have a significant impact on the predic- tion accuracy. We address this issue by using the self tuning versions of these prediction models, which estimate these parameters based on the error between the predicted and observed RWSS values.
-- 下图是一个例子，值得提醒的是这个图我看了很久才完全理解对：首先 (a) 图的 WSS 曲线的几个 peak 都来自一些特殊的 scanning；其次 (b) 图为什么即使是 WSS 都数值不一样了呢？因为整个 (b) 图都是用了 smoothing method 的；(b) 图还想要说明的是 RWSS 其实有一些 "occasional bursts of IOs that do not reflect the general trend of the workload"，用 "RWSS+Filter" 效果更好。
+- 下图是一个例子，值得提醒的是这个图我看了很久才完全理解对：首先 (a) 图的 WSS 曲线的几个 peak 都来自大型 scanning；其次 (b) 图为什么即使是 WSS 都数值不一样了呢？因为整个 (b) 图都是用了 smoothing method 的；(b) 图还想要说明的是 RWSS 其实有一些 "occasional bursts of IOs that do not reflect the general trend of the workload"，用 "RWSS+Filter" 效果更好，也确实可以看到一些小的凸起比如 day5 就没了。
 
 {% include figure.html path="assets/img/fig/CloudCache-fig4.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
@@ -100,18 +100,19 @@ Question:
 
 - "exponential smoothing methods" 引入得好突然，不是很懂选它的前因后果
 - 虽然 RWSS+Filter 确实把突变点抹平了，但我不理解的是，为什么 occasional bursts of IOs 不值得这一天给他多分一点，确实这一天它有更多的需求啊，甚至不是那种来自 scanning 的需求（RWSS 已经过滤掉了只 hit 一次的情况）
-- 不懂这个 window 实际是怎么进行的：是缓慢滑行（pop & push 那种感觉），还是单独 window 考虑；这部分会不会影响性能？
+- 不懂这个 window 实际是怎么进行的：是缓慢滑行（pop & push 那种感觉），还是单独 window 考虑（有提到用了 circular buffer）；这部分会不会影响性能？
 
 ### Cache Allocation and Admission
 
 - The allocation of cache capacity should not incur costly data copying or flushing.
   - Hence, we consider **replacement-time enforcement** of cache allocation with logical partitioning at replacement time: a VM that has not used up its allocated share takes its space back by replacing a block from VMs that have exceeded their shares.
   - If the cache is not full, the spare capacity can be allocated to the VMs proportionally to their predicted RWSSes or left idle to reduce wear-out.
-- Hybrid stage policy (address staging + data staging): 存 address 的好处是不占空间 (8B address per 4KB data)，但存 data 可以减少 second miss，这里有个 trade-off
+- Hybrid stage policy (address staging + data staging) **in main memory**: 需要考虑 RWS 或者 WS 都需要存历史信息；只存 address 的好处是不占空间 (8B address per 4KB data)，如果存 data 虽然挤占了存 address 的空间，但可以补偿一些 second miss —— 这里有个 trade-off
 
 Question:
 
 - 不知道这里的 LRU 是怎么维护的，我好像 whole picture 不清晰
+- in-memory 会不会价值更高？
 
 ### Evaluation
 
