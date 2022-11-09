@@ -48,7 +48,7 @@ comments: true
 
 Questions:
 
-- what does "consolidated systems" mean?
+- ~~what does "consolidated systems" mean?~~ 可能是会有多个 VM 在一个 host
 
 ## Architecture
 
@@ -96,7 +96,7 @@ Reuse Working Set, RWS_N (t, T), which is defined as the set of distinct (addres
 
 {% include figure.html path="assets/img/fig/CloudCache-fig4.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
-Question:
+Questions:
 
 - "exponential smoothing methods" 引入得好突然，不是很懂选它的前因后果
 - 虽然 RWSS+Filter 确实把突变点抹平了，但我不理解的是，为什么 occasional bursts of IOs 不值得这一天给他多分一点，确实这一天它有更多的需求啊，甚至不是那种来自 scanning 的需求（RWSS 已经过滤掉了只 hit 一次的情况）
@@ -109,7 +109,7 @@ Question:
   - If the cache is not full, the spare capacity can be allocated to the VMs proportionally to their predicted RWSSes or left idle to reduce wear-out.
 - Hybrid stage policy (address staging + data staging) **in main memory**: 需要考虑 RWS 或者 WS 都需要存历史信息；只存 address 的好处是不占空间 (8B address per 4KB data)，如果存 data 虽然挤占了存 address 的空间，但可以补偿一些 second miss —— 这里有个 trade-off
 
-Question:
+Questions:
 
 - 不知道这里的 LRU 是怎么维护的，我好像 whole picture 不清晰
 - in-memory 会不会价值更高？
@@ -132,7 +132,7 @@ No allocation = workload can use up the entire cache where the cache is large en
 
 WSS 看上去也准入了 first miss，但比 No-Alloc 小很多是因为多了时间窗（比如 1 天的约束）。
 
-Question:
+Questions:
 
 - **怎么做到 No alloc 和 RWSS 明明 hit ratio 有一定差距，latency 却差不多的？**
 
@@ -147,4 +147,6 @@ Question:
 - On-Demand Migration
 - Background Migration
 
-略
+Questions:
+
+- 怎么把原 workload 分到实验配置的两个 host 之上的？
