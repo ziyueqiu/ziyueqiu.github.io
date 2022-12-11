@@ -4,6 +4,8 @@ title:      CloudCache (FAST 16) 论文阅读
 date:       2022-10-29
 tags:
     - Cloud
+    - Elasiticity
+    - Cache
 categories: PaperReading
 comments: true
 ---

@@ -4,6 +4,7 @@ title:      InfiniCache (FAST20) 论文阅读
 date:       2022-11-23
 tags:
     - Cloud
+    - Cache
 categories: PaperReading
 comments: true
 ---

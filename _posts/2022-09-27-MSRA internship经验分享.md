@@ -4,7 +4,6 @@ title:      MSRA internship 经验分享
 date:       2022-09-27
 tags:
     - 经验分享
-    - 中文
 categories: Application2PhD
 comments: true
 ---
