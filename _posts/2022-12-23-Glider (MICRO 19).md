@@ -9,7 +9,7 @@ categories: PaperReading
 comments: true
 ---
 
-[TMO: Transparent Memory Offloading in Datacenters](https://www.pdl.cmu.edu/ftp/NVM/tmo_asplos22.pdf)
+[Applying Deep Learning to the Cache Replacement Problem](https://www.cs.utexas.edu/users/lin/papers/micro19c.pdf)
 
 （号称）第一篇 Deep Learning + Cache Replacement 走进现实
 
