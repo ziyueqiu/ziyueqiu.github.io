@@ -136,7 +136,7 @@ We choose to identify loads by their PC instead of their memory address. 主要�
 
 k-sparse binary 来代表忽略了顺序的 unique PC sequence
 
-Fact 1. With binary features, the use of **gradient descent with learning rate γ = 1/n** for an integer n is **equivalent** to optimizing the following objective function with **learning rate 1**. 如果 initial weight vector 是 1/n learning rate 的 n 倍，learning rate 也变成 n 倍 (1/n * n = 1)，目标也变成 **n** - y * $w^Tx$，就等价了。好处是 ISVM 可以对 weight 做整数运算而不是浮点运算，进一步说，也就等价于了 perception 的复杂度。
+Fact 1. With binary features, the use of **gradient descent with learning rate γ = 1/n** for an integer n is **equivalent** to optimizing the following objective function with **learning rate 1**. 如果 initial weight vector 是 1/n learning rate 的 n 倍，learning rate 也变成 n 倍 (1/n * n = 1)，目标也变成 **n** - y * $$w^Tx$$，就等价了。好处是 ISVM 可以对 weight 做整数运算而不是浮点运算，进一步说，也就等价于了 perception 的复杂度。
 
 ### Hardware Design
 

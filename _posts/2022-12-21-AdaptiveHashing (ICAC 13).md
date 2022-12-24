@@ -58,18 +58,18 @@ Our system has three important phases: initial hash space assignment using virtu
 
 A simplified weighted moving average (WMA) with the scheduling time t0 is used to estimate the hit rate smoothly over the scheduling times:
 
-- $h_i = 1− \frac{set(i)}{(get(i)−set(i)}$ (“Hit rate”is a composite metric to represent both object sizes and key distribution, and this also applies when servers have different cache size)
-- $r_i(t) = r_i(t)/t_0 + ui/max_{a≤j≤n}$ {uj}
+- $$h_i = 1− \frac{set(i)}{(get(i)−set(i)}$$ (“Hit rate”is a composite metric to represent both object sizes and key distribution, and this also applies when servers have different cache size)
+- $$r_i(t) = r_i(t)/t_0 + ui/max_{a≤j≤n}$$ {uj}
 - c = α·h+(1−α)·r, h is miss rate and r is usage ratio
-- GoaL: minimize $\sum_{i=1}^n c_i$
-- Approach: find a maximum cost $c_i$ and a minimum cost $c_j$ -> change hash space and migrate objects from $c_i$ to $c_j$, the step is β·(1−$\frac{c_j}{c_i}$)×\|$s_i$\|. β 在本文固定为 0.01.
+- GoaL: minimize $$\sum_{i=1}^n c_i$$
+- Approach: find a maximum cost $$c_i$$ and a minimum cost $$c_j$$ -> change hash space and migrate objects from $$c_i$$ to $$c_j$$, the step is β·(1−$$\frac{c_j}{c_i}$$)×\|$$s_i$$\|. β 在本文固定为 0.01.
 
 ### Node Addition/Removal
 
 {% include figure.html path="assets/img/fig/AdaptiveHashing-fig4.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 - Addition 的描述特别迷惑：找出 cost 最不好（最大）的 k 个，每个都拿走一半的 hash space 给新机器。这个“一半”是怎么选出的 magic number，以及如何拿走这 k 个机器的部分，同时满足每个机器都和其他有相邻点，我确实懵了。原文："new erver takes over exactly half of the hash space from $s_i^∗$, which is \|si\|/2."
-- Removal: $s_i$ 得到 $\frac{c_j}{c_i+c_j} \times |s_k|$
+- Removal: $$s_i$$ 得到 $$\frac{c_j}{c_i+c_j} \times |s_k|$$
 
 ### Implementation Considerations
 
