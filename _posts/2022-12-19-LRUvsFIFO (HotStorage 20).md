@@ -4,6 +4,7 @@ title:      LRUvsFIFO (HotStorage 20) 论文阅读
 date:       2022-12-19
 tags:
     - Cloud
+    - Cache
 categories: PaperReading
 comments: true
 ---
@@ -73,7 +74,7 @@ The IBM COS trace
 
 虽然是一篇很有趣的工作，尝试做了一个“新鲜“的 revisit，但是我仍有几个疑虑：
 
-- 只比较 LRU 和 FIFO 这两个同一类的算法是不是过于简单了呢？诚然 FIFO 和 LRU 在命中率非常接近的时候，FIFO 可能由于 simplicity 取胜；但事情可能大不一样，当我们引入了其他类型的算法进行对比，比如 2Q，TinyLFU，我很好奇这种所谓的“New Workloads”具体有什么算法倾向性/有没有可能 FIFO 和 LRU 就是菜鸡互啄呢？（sec5 discussion 探讨了）
+- 只比较 LRU 和 FIFO 这两个同一类的算法是不是过于简单了呢？诚然 FIFO 和 LRU 在命中率非常接近的时候，FIFO 可能由于 simplicity 取胜；但事情可能大不一样，当我们引入了其他类型的算法进行对比，比如 2Q，TinyLFU，我很好奇这种所谓的“New Workloads”具体有什么算法倾向性/有没有可能 FIFO 和 LRU 就是菜鸡互啄呢？（后来发现 sec5 discussion 探讨了一点点）
 - 关于“A New Scale to Caches”，我不理解为什么 metadata size 太大会放不下，不能 consistent hashing + multiple DRAM servers 解决吗？也许有更公平的对比的 metrics？
 - 看起来本文只考虑了在 persistent storage 作 cache 的情况下，性能公式需要考虑 latency of metadata，但其实 metadata space overhead 也不同，对应的 budget 也会不同：allocation monetary cost 更少，这也是 simplicity 可能带来的好处。
 
