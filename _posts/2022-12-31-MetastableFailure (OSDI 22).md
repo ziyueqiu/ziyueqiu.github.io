@@ -58,7 +58,7 @@ While triggers initiate the failure, the sustaining effect mechanisms prevent th
 - Definition 4 (Metastable amplification). A metastable amplification exacerbates the system’s overload until it reaches a maximum overload limit. 
 - Theorem 2 (Stable region). Define $$C_{stable}=\frac{C_{norm}}{w_L^**w_C^*}$$. If
 Lnorm < Cstable, then the system will never have a metastable failure.
-- Theorem 3 (Degrees of vulnerability). If the metastable amplification during the trigger overloading duration ∆$$t_{trig}$$ is small enough relative to the system headroom (i.e., wL(∆t$$t_{trig}$$) * wC(∆t$$t_{trig}$$) < $\frac{C_norm}{L_norm}$ ), then the system will never have a metastable failure.
+- Theorem 3 (Degrees of vulnerability). If the metastable amplification during the trigger overloading duration ∆$$t_{trig}$$ is small enough relative to the system headroom (i.e., wL(∆t$$t_{trig}$$) * wC(∆t$$t_{trig}$$) < $$\frac{C_norm}{L_norm}$$ ), then the system will never have a metastable failure.
 - Theorem 4 (Metastable failure boundary). If the metastable amplification causes the system overload to exceed the triggers’ effects (i.e., Lsys(t) − Csys(t) ≥ αL(t) * mtrigL + αC(t) * mtrigC), then the system is in a metastable failure state.
 
 Intuitively, the upper bounds allow us to reason about vulnerability and when a system enters a metastable failure state. For instance, a policy with at most two retries will not amplify the work more than three times, **while the policy with no cap effectively leaves the system with no stable region**.
