@@ -42,8 +42,8 @@ nav_order: 6
 
 [Chi Zhang @ CMU](https://www.linkedin.com/in/chizhang1997/) is a sweet girl with wide interests. For instance, I enjoy playing 飞花令 (a game need solid foundation in Chinese poems) with her.
 
-[Yewen Fan @ CMU](https://tofuwen.github.io/) is a card-game PhD (joking), enthusiastic about contract bridge (双升) and other card games, and research (of course!).
+[Yewen Fan @ CMU](https://tofuwen.github.io/) is a card-game PhD (joking), enthusiastic about contract bridge, 双升 and other card games, and research (of course!).
 
 [Yue Wu @ CMU](https://www.yuewu.ml/) is not only a researcher successful in RL but also a man caring about quality in various aspects of his life (e.g. food, household supplies, playing frisbee).
 
-[Xinshuai Dong @ CMU](https://scholar.google.com/citations?user=A7JyL1sAAAAJ) is a master at fishing (** someone who lets you talk and talk until you have completely exposed yourself) and a double PhD degree in card games and frisbee (joking!).
+[Xinshuai Dong @ CMU](https://dongxinshuai.github.io/) is a master at fishing (** someone who lets you talk and talk until you have completely exposed yourself) and a double PhD degree in card games and frisbee (joking!).
