@@ -38,12 +38,12 @@ nav_order: 6
 
 [Wenzhuo Xu @ CMU](https://wenzhuo.webflow.io/) is able to gain high scores in Toefl (118/30 in speaking) and other exams but don't know how to 'gain' his first publication till now (just joking, he is great like Yihang).
 
-[Shu (Lynn) Liu @ UC Berkeley](https://lynnliu030.github.io/) is a [hobbyist photographer](https://lynnliu030.github.io/photography/) and a Systems PhD who has so many things in common with me :) (e.g. research interest and background). Hope we both have bright future.
+[Shu (Lynn) Liu @ UC Berkeley](https://lynnliu030.github.io/) is a [hobbyist photographer](https://lynnliu030.github.io/photography/) and a Systems PhD who has so many things in common with me :) (e.g. research interest and background). Hope we both have a bright future.
 
-[Chi Zhang @ CMU](https://www.linkedin.com/in/chizhang1997/) is a sweet girl with wide interests. For instance, I enjoy playing 飞花令 (a game need solid foundation in Chinese poems) with her.
+[Chi Zhang @ CMU](https://www.linkedin.com/in/chizhang1997/) is a sweet girl with wide interests. For instance, I enjoy playing 飞花令 (a game that needs a solid knowledge of Chinese poems) with her.
 
 [Yewen Fan @ CMU](https://tofuwen.github.io/) is a card-game PhD (joking), enthusiastic about contract bridge, 双升 and other card games, and research (of course!).
 
-[Yue Wu @ CMU](https://www.yuewu.ml/) is not only a researcher successful in RL but also a man caring about quality in various aspects of his life (e.g. food, household supplies, playing frisbee).
+[Yue Wu @ CMU](https://www.yuewu.ml/) is not only a researcher successful in RL but also a quality man in various aspects of life (e.g. food, household supplies, playing frisbee).
 
-[Xinshuai Dong @ CMU](https://dongxinshuai.github.io/) is a master at fishing (** someone who lets you talk and talk until you have completely exposed yourself) and a double PhD degree in card games and frisbee (joking!).
+[Xinshuai Dong @ CMU](https://dongxinshuai.github.io/) is a master at fishing (someone that lets you talk and talk until you have completely exposed yourself) and has a double PhD degree in card games and frisbee (joking!).
