@@ -5,7 +5,7 @@ date:       2022-12-23
 tags:
     - Cache
     - ML
-categories: PaperReading
+categories: paperreading
 comments: true
 ---
 

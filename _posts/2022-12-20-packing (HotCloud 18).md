@@ -4,7 +4,7 @@ title:      packing (HotCloud 18) 论文阅读
 date:       2022-12-20
 tags:
     - Cloud
-categories: PaperReading
+categories: paperreading
 comments: true
 ---
 

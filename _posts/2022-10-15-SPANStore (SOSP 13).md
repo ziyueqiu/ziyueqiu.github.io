@@ -4,7 +4,7 @@ title:      SPANStore (SOSP 13) 论文阅读
 date:       2022-10-15
 tags:
     - Cloud
-categories: PaperReading
+categories: paperreading
 comments: true
 ---
 

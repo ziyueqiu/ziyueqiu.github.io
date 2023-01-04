@@ -4,7 +4,7 @@ title:      Skyplane (NSDI 23) 论文阅读
 date:       2022-10-23
 tags:
     - Cloud
-categories: PaperReading
+categories: paperreading
 comments: true
 ---
 

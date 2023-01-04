@@ -4,7 +4,7 @@ title:      MetastableFailure (OSDI 22) 论文阅读
 date:       2022-12-31
 tags:
     - Distributed Systems
-categories: PaperReading
+categories: paperreading
 comments: true
 ---
 

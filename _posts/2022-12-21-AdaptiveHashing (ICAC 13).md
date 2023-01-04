@@ -4,7 +4,7 @@ title:      AdaptiveHashing (ICAC 13) 论文阅读
 date:       2022-12-21
 tags:
     - Cache
-categories: PaperReading
+categories: paperreading
 comments: true
 ---
 
