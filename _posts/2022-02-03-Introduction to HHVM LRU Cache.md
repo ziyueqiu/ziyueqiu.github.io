@@ -4,7 +4,7 @@ title:      Introduction to HHVM LRU Cache
 date:       2022-02-03
 tags:
     - Cache
-categories: Caching
+categories: caching
 comments: true
 ---
 
