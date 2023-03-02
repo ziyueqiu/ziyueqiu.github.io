@@ -40,3 +40,21 @@ Questions:
 
 {% include figure.html path="assets/img/fig/GLCache-fig1.png" class="img-fluid rounded z-depth-1" zoomable=false %}
 
+- Learning object-group utility
+  - gradient boosting machines (GBM) because tree models do not require feature normalization
+  - formulate the learning task as a regression problem that minimizes the mean square loss (L2) of object-group utilities
+  - A sampled group may be evicted before being used for training. Such evictions halt the tracking of group utility. GL-Cache keeps ghost entries for objects which have not been factored into group utility.
+  - 一次扔掉最差的 group 附近的 $$N_{group}$$ 个 group，这个参数可能设置成整体的 1% 之类的
+
+Questions:
+
+- 如果有好几个 application 同时写入，凭什么说有相似的 write-time 的 object 相似呢？
+- "GL-Cache generates new training data by sampling cached object groups, and it copies the features of the sampled groups into a pre-allocated memory region" 这不是也有 random sampling (v.s. learning-from-distribution)?
+
+## Evaluation
+
+放两个有意思的图：
+
+{% include figure.html path="assets/img/fig/GLCache-fig2.png" class="img-fluid rounded z-depth-1" zoomable=false %}
+
+{% include figure.html path="assets/img/fig/GLCache-fig3.png" class="img-fluid rounded z-depth-1" zoomable=false %}
