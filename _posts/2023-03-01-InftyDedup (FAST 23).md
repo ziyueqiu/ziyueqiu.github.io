@@ -50,11 +50,15 @@ The deduplicated blocks are typically organized in a directed acyclic graph. Eac
 
 ## InftyDedup Architecture
 
-TBD
+The cloud tier stores deduplicated data with necessary persistent metadata, and occasionally executes highly optimized batch algorithms.
 
+{% include figure.html path="assets/img/fig/InftyDedup-fig2.png" class="img-fluid rounded z-depth-1" zoomable=false %}
 
+### Cloud Cost Considerations
 
+暂略
 
 ## 评论
 
 - 我们能认为用户级别的 dedup 是在榨取 cloud providers 的利润吗？因为他们肯定也会做 dedup。
+- 总的来说就是几方面的 tradeoff：deleted blocks 要存多久再做 GC？removal cost vs storage cost，根据 backup 身上的 expiration date 计算；要放在多便宜的 layer，根据各种 cost，比如 data movement / restore frequency 等等计算。对于 backup，这一切格外地好计算。 
