@@ -67,13 +67,13 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 # Social integration
 # -----------------------------------------------------------------------------
 
-github_username: USTCqzy # your GitHub user name
+github_username: ziyueqiu # your GitHub user name
 gitlab_username: # your GitLab user name
 twitter_username: ziyue_qiu # your Twitter handle
 linkedin_username: # your LinkedIn user name
-scholar_userid: # your Google Scholar ID
+scholar_userid: XPpKrNgAAAAJ # your Google Scholar ID
 semanticscholar_id: # your Semantic Scholar ID
-orcid_id: # your ORCID ID
+orcid_id: 0009-0002-9546-8599 # your ORCID ID
 medium_username: # your Medium username
 quora_username: # your Quora username
 publons_id: # your ID on Publons
@@ -95,7 +95,7 @@ discord_id:  # your discord id (18-digit unique numerical identifier)
 telegram_id: dopanic # your telegram id
 
 contact_note: >
-  Feel free to find me in any way you like :)
+  Feel free to reach out
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
