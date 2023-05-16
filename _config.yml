@@ -231,8 +231,8 @@ display_tags: ['经验分享', 'Cache', 'MRC-Generation', 'Elasiticity', 'Cloud'
 
 scholar:
 
-  last_name: Einstein
-  first_name: [Albert, A.]
+  last_name: Qiu
+  first_name: [Ziyue]
 
   style: apa
   locale: en
