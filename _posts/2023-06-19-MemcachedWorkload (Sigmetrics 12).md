@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      FackbookWorkload (SigMetrics 12) 论文阅读
+title:      MemcachedWorkload (Sigmetrics 12) 论文阅读
 date:       2023-06-19
 tags:
     - Modeling
