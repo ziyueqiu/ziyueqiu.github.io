@@ -15,13 +15,12 @@ comments: true
 ## Introduction
 
 - the accesses in UDB explicitly exhibit a diurnal pattern -- How to model diurnal patterns?
-- The whole keyspace is partitioned into small key-ranges, and we model the hotness of these small key-ranges.
-- YCSB causes at least 500% more read-bytes and delivers only 17% of the cache hits in RocksDB compared with realworld workloads. New benchmark has only 43% more read-bytes and achieve about 77% of the cache hits in RocksDB, and thus are much closer to real-world workloads.
+- The whole key-space is partitioned into small key-ranges, and we model the hotness of these small key-ranges.
+- YCSB causes at least 500% more read-bytes and delivers only 17% of the cache hits in RocksDB compared with real-world workloads. New benchmark has only 43% more read-bytes and achieve about 77% of the cache hits in RocksDB, and thus are much closer to real-world workloads.
 
 ## Modeling and Benchmarking
 
-We first calculate the Pearson correlation coefficients between any two selected variables to ensure that these variables have very low correlations. In this way, each variable can be modeled separately. Then, we fit the collected workloads to different statistical models to
-find out which one has the lowest fitting error, which is more accurate than always fitting different workloads to the same model (like Zipfian). The proposed benchmark can then generate KV queries based on these probability models.
+We first calculate the Pearson correlation coefficients between any two selected variables to ensure that these variables have very low correlations. In this way, each variable can be modeled separately. Then, we fit the collected workloads to different statistical models to find out which one has the lowest fitting error, which is more accurate than always fitting different workloads to the same model (like Zipfian). The proposed benchmark can then generate KV queries based on these probability models.
 
 QPS (Queries Per Second) of some CFs in UDB (social network SQL) have strong diurnal patterns
 
@@ -39,8 +38,7 @@ QPS can be better fit to **Cosine or Sine** in a 24-hour period with very small 
 
 Details:
 
-Based on the KV-pair access counts and their sequence in the whole key-space, the average accesses per KV-pair of each key-range is calculated and fit to the distribution model (e.g., power distribution). This way, when one query is generated, we can calculate the probability of each key-range
-responding to this query. Inside each key range, we let the KV-pair access count distribution follow the distribution of the whole key-space. This ensures that the distribution of the overall KV-pair access counts satisfies that of a real-world workload. Also, we make sure that **hot KV-pairs are allocated closely together**. Hot and cold key-ranges can be randomly assigned to the whole key-space, since the locations of keyranges have low influence on the workload locality.
+Based on the KV-pair access counts and their sequence in the whole key-space, the average accesses per KV-pair of each key-range is calculated and fit to the distribution model (e.g., power distribution). This way, when one query is generated, we can calculate the probability of each key-range responding to this query. Inside each key range, we let the KV-pair access count distribution follow the distribution of the whole key-space. This ensures that the distribution of the overall KV-pair access counts satisfies that of a real-world workload. Also, we make sure that **hot KV-pairs are allocated closely together**. Hot and cold key-ranges can be randomly assigned to the whole key-space, since the locations of keyranges have low influence on the workload locality.
 
 我的理解是：
 
