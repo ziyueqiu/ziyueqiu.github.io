@@ -43,6 +43,11 @@
     #         - Sub-description 1.
     #         - Sub-description 2.
     - title: Research Intern
+      institution: Data Infrastructure Team, Uber
+      year: 2023-present
+      description:
+        - Working on cloudlake project, optimizing both performance and cost on Uber infrastructure
+    - title: Research Intern
       institution: System Group, Microsoft Research Asia
       year: 2021-2022
       description:
