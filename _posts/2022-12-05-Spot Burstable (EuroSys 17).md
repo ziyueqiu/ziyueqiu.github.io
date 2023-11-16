@@ -3,7 +3,7 @@ layout:     post
 title:      Spot Burstable (EuroSys17) 论文阅读
 date:       2022-12-05
 tags:
-    - Cloud
+    - cloud
 categories: paperreading
 comments: true
 ---

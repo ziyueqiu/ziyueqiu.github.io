@@ -3,7 +3,7 @@ layout:     post
 title:      RocksDBWorkload (FAST 20) 论文阅读
 date:       2023-06-20
 tags:
-    - Modeling
+    - modeling
 categories: paperreading
 comments: true
 ---

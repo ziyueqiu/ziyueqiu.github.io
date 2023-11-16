@@ -3,8 +3,8 @@ layout:     post
 title:      InftyDedup (FAST 23) 论文阅读
 date:       2023-03-01
 tags:
-    - Cloud
-    - Deduplication
+    - cloud
+    - deduplication
 categories: paperreading
 comments: true
 ---

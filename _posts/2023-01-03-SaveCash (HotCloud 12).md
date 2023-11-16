@@ -3,8 +3,8 @@ layout:     post
 title:      SaveCash (HotCloud 12) 论文阅读
 date:       2023-01-03
 tags:
-    - Cache
-    - Cloud
+    - cache
+    - cloud
 categories: paperreading
 comments: true
 ---

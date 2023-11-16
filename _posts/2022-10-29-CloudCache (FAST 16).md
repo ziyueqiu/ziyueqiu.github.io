@@ -3,9 +3,9 @@ layout:     post
 title:      CloudCache (FAST 16) 论文阅读 - Reuse Working Set (RSS) admission
 date:       2022-10-29
 tags:
-    - Cloud
-    - Elasiticity
-    - Cache
+    - cloud
+    - elasiticity
+    - cache
 categories: paperreading
 comments: true
 ---

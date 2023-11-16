@@ -3,8 +3,8 @@ layout:     post
 title:      InfiniCache (FAST20) 论文阅读
 date:       2022-11-23
 tags:
-    - Cloud
-    - Cache
+    - cloud
+    - cache
 categories: paperreading
 comments: true
 ---

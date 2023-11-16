@@ -3,7 +3,8 @@ layout:     post
 title:      OpenvsClosed (NSDI 06) 论文阅读
 date:       2023-01-02
 tags:
-    - Systems
+    - systems
+    - modeling
 categories: paperreading
 comments: true
 ---

@@ -3,7 +3,7 @@ layout:     post
 title:      Dynacache (HotCloud 15) 论文阅读
 date:       2023-01-10
 tags:
-    - Cache
+    - cache
 categories: paperreading
 comments: true
 ---

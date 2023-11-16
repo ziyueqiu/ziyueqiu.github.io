@@ -3,7 +3,7 @@ layout:     post
 title:      Skyplane (NSDI 23) 论文阅读 - save egress-cost and maximize transfer speed
 date:       2022-10-23
 tags:
-    - Cloud
+    - cloud
 categories: paperreading
 comments: true
 ---

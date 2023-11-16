@@ -3,9 +3,9 @@ layout:     post
 title:      D3N (IEEE Big Data 19) 论文阅读 - multi-layer cache size auto-configuration
 date:       2022-11-05
 tags:
-    - Cloud
-    - Elasiticity
-    - Cache
+    - cloud
+    - elasiticity
+    - cache
 categories: paperreading
 comments: true
 ---

@@ -3,7 +3,7 @@ layout:     post
 title:      Experiences with CLHT, a research concurrent hash table from EPFL
 date:       2022-02-02
 tags:
-    - Hash Table
+    - hash table
 categories: caching
 comments: true
 ---

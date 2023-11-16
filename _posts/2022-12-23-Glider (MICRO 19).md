@@ -3,8 +3,8 @@ layout:     post
 title:      Glider (MICRO 19) 论文阅读
 date:       2022-12-23
 tags:
-    - Cache
-    - ML
+    - cache
+    - ml
 categories: paperreading
 comments: true
 ---

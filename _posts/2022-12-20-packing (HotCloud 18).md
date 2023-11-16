@@ -3,7 +3,7 @@ layout:     post
 title:      packing (HotCloud 18) 论文阅读
 date:       2022-12-20
 tags:
-    - Cloud
+    - cloud
 categories: paperreading
 comments: true
 ---

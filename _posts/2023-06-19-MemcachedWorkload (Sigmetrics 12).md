@@ -3,8 +3,8 @@ layout:     post
 title:      MemcachedWorkload (Sigmetrics 12) 论文阅读
 date:       2023-06-19
 tags:
-    - Modeling
-    - Cache
+    - modeling
+    - cache
 categories: paperreading
 comments: true
 ---

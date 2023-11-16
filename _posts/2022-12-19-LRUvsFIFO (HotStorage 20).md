@@ -3,8 +3,8 @@ layout:     post
 title:      LRUvsFIFO (HotStorage 20) 论文阅读
 date:       2022-12-19
 tags:
-    - Cloud
-    - Cache
+    - cloud
+    - cache
 categories: paperreading
 comments: true
 ---

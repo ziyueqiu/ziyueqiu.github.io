@@ -3,7 +3,7 @@ layout:     post
 title:      Introduction to HHVM LRU Cache
 date:       2022-02-03
 tags:
-    - Cache
+    - cache
 categories: caching
 comments: true
 ---
