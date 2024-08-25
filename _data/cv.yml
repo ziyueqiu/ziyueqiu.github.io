@@ -65,6 +65,23 @@
 #       year: 2015-now
 #       description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
 
+- title: Talks
+  type: time_table
+  contents:
+    - year: 2024
+      items: 
+        - Co-presented “Data Caching for Enterprise-Grade Petabyte-Scale OLAP” at USENIX ATC 2024
+    - year: 2023
+      items: 
+        - Presented “FrozenHot Cache - Rethinking Cache Management for Modern Hardware” at EuroSys 2024
+
+- title: Services
+  type: time_table
+  contents:
+    - year: 2024
+      items: 
+        - Artifact Evaluation committee - SIGCOMM 2024, EuroSys 2025
+
 - title: Honors and Awards
   type: time_table
   contents:
@@ -96,4 +113,4 @@
 - title: Other Interests
   type: list
   contents:
-    - <u>Hobbies:</u> Ultimate Frisbee, Sudoku, Criminology, Anime
+    - <u>Hobbies:</u> Ultimate Frisbee, rock climbing, Texas poker, stand-up comedy, Sudoku, Criminology, Anime
