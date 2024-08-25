@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      To Move or Not to Move`:` The Economics of Cloud Computing (HotCloud 11) 论文阅读
+title:      To Move or Not to Move\: The Economics of Cloud Computing (HotCloud 11) 论文阅读
 date:       2023-11-16
 tags:
     - cloud
