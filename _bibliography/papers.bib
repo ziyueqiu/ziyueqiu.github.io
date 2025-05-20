@@ -1,6 +1,28 @@
 ---
 ---
 
+@inproceedings{10.1145/3694715.3695972,
+author = {Park, Hojin and Qiu, Ziyue and Ganger, Gregory R. and Amvrosiadis, George},
+title = {Reducing Cross-Cloud/Region Costs with the Auto-Configuring MACARON Cache},
+year = {2024},
+isbn = {9798400712517},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3694715.3695972},
+doi = {10.1145/3694715.3695972},
+abstract = {An increasing demand for cross-cloud and cross-region data access is bringing forth challenges related to high data transfer costs and latency. In response, we introduce Macaron, an auto-configuring cache system designed to minimize cost for remote data access. A key insight behind Macaron is that cloud cache size is tied to cost, not hardware limits, shifting the way we think about cache design and eviction policies. Macaron dynamically configures cache size and utilizes a mix of cloud storage types to adapt to workload changes and reduce costs. We demonstrate that Macaron reduces cross-cloud workload costs by 65\% and cross-region costs by 67\%, mainly by reducing outgoing data transfer and by leveraging object storage alongside DRAM to reduce capacity cost.},
+booktitle = {Proceedings of the ACM SIGOPS 30th Symposium on Operating Systems Principles},
+pages = {347–368},
+numpages = {22},
+keywords = {cross-cloud/region, caching, auto-configuring system, cost-efficient system},
+location = {Austin, TX, USA},
+series = {SOSP '24},
+pdf = {https://dl.acm.org/doi/abs/10.1145/3694715.3695972},
+code = {https://github.com/hojinp/macaron_simulator},
+slides = {Macaron-slides.pdf},
+preview = {Macaron-fig.png},
+}
+
 @inproceedings{10.1145/3552326.3587446,
 author = {Qiu, Ziyue and Yang, Juncheng and Zhang, Juncheng and Li, Cheng and Ma, Xiaosong and Chen, Qi and Yang, Mao and Xu, Yinlong},
 title = {FrozenHot Cache: Rethinking Cache Management for Modern Hardware},
@@ -87,3 +109,4 @@ pdf = {https://dl.acm.org/doi/abs/10.1145/3593856.3595887}
       primaryClass={cs.DC},
       html={https://arxiv.org/abs/2311.00156}, 
 }
+
