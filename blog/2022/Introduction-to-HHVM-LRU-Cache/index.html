@@ -1,0 +1,256 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title>Introduction to HHVM LRU Cache | Ziyue Qiu</title> <meta name="author" content="Ziyue Qiu"/> <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. "/> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"/> <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous"/> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous"> <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="none" id="highlight_theme_light"/> <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚛️</text></svg>"> <link rel="stylesheet" href="/assets/css/main.css"> <link rel="canonical" href="https://ziyueqiu.github.io/blog/2022/Introduction-to-HHVM-LRU-Cache/"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark"/> <script src="/assets/js/theme.js"></script> <script src="/assets/js/dark_mode.js"></script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"><span class="font-weight-bold">Ziyue </span>Qiu</a> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about</a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog<span class="sr-only">(current)</span></a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications</a> </li> <li class="nav-item "> <a class="nav-link" href="/repositories/">repositories</a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">cv</a> </li> <li class="nav-item "> <a class="nav-link" href="/teaching/">teaching</a> </li> <li class="nav-item "> <a class="nav-link" href="/friend/">Friends</a> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="fas fa-moon"></i> <i class="fas fa-sun"></i> </button> </li> </ul> </div> </div> </nav> </header> <div class="container mt-5"> <div class="post"> <header class="post-header"> <h1 class="post-title">Introduction to HHVM LRU Cache</h1> <p class="post-meta">February 3, 2022</p> <p class="post-tags"> <a href="/blog/2022"> <i class="fas fa-calendar fa-sm"></i> 2022 </a>   ·   <a href="/blog/tag/cache"> <i class="fas fa-hashtag fa-sm"></i> cache</a>     ·   <a href="/blog/category/caching"> <i class="fas fa-tag fa-sm"></i> caching</a>   </p> </header> <article class="post-content"> <h2 id="what-you-will-see">What you will see</h2> <p>I am impressed by this 400 LOC pure implementation of LRU Cache <a href="https://github.com/facebook/hhvm/blob/master/hphp/util/concurrent-lru-cache.h" target="_blank" rel="noopener noreferrer">source code</a>, and decide to introduce its design through scanning the code. I believe learning HHVM LRU Cache implementation can help when needing to understand all kinds of cache implementations.</p> <ul> <li>Data structures including doubly-linked list and hash table</li> <li>APIs including <code class="language-plaintext highlighter-rouge">insert()</code>, <code class="language-plaintext highlighter-rouge">find()</code> </li> <li>Thread-safe</li> <li>non-blocking (try_lock) for hit path</li> <li>Thinking questions</li> </ul> <h2 id="terms">Terms</h2> <ul> <li> <p><strong>Key</strong> Keys are hashed to metadata and searched in hash table here. Related to <code class="language-plaintext highlighter-rouge">m_key</code>, <code class="language-plaintext highlighter-rouge">key</code> in source code.</p> </li> <li> <p><strong>Object</strong> values for a Key-Value Cache or blocks for a Block Cache.</p> </li> <li> <p><strong>Eviction</strong> Eviction refers an item exiting from cache because the cache storage is full. Evictions are triggerred internally.</p> </li> <li> <strong>LRU List</strong> LRU List maintains the LRU order. Related to <code class="language-plaintext highlighter-rouge">m_head</code> and <code class="language-plaintext highlighter-rouge">m_tail</code> in source code. <ul> <li> <strong>Node</strong> Node refers node in LRU List, with type of <code class="language-plaintext highlighter-rouge">ListNode</code>.</li> <li> <strong>Lock</strong> Locks are used for protection under concurrent accesses, such as <code class="language-plaintext highlighter-rouge">m_listMutex</code> </li> </ul> </li> <li> <strong>Hash Table</strong> Related to <code class="language-plaintext highlighter-rouge">HashMap</code> and <code class="language-plaintext highlighter-rouge">m_map</code> in source code</li> </ul> <h2 id="data-structures">Data structures</h2> <p>Architecture TBD :)</p> <h3 id="listnode">ListNode</h3> <p>Each node’s prev pointer is always inited into <code class="language-plaintext highlighter-rouge">OutOfListMarker</code>, which is a global const.</p> <p>The main usage of <code class="language-plaintext highlighter-rouge">OutOfListMarker</code> is to judge whether in list (<code class="language-plaintext highlighter-rouge">isInList()</code>). To elaborate more, <code class="language-plaintext highlighter-rouge">isInList()</code> is used in <code class="language-plaintext highlighter-rouge">find()</code> to avoid conflict where hash table returned node is being evicted. The conflict can happen because <code class="language-plaintext highlighter-rouge">find()</code> search hash table to get node without lock, and adding a condition can ensure thread-safety.</p> <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">struct</span> <span class="n">ListNode</span> <span class="p">{</span>
+    <span class="n">ListNode</span><span class="p">()</span>
+      <span class="o">:</span> <span class="n">m_prev</span><span class="p">(</span><span class="n">OutOfListMarker</span><span class="p">),</span> <span class="n">m_next</span><span class="p">(</span><span class="n">nullptr</span><span class="p">)</span>
+    <span class="p">{}</span>
+
+    <span class="n">explicit</span> <span class="n">ListNode</span><span class="p">(</span><span class="k">const</span> <span class="n">TKey</span><span class="o">&amp;</span> <span class="n">key</span><span class="p">)</span>
+      <span class="o">:</span> <span class="n">m_key</span><span class="p">(</span><span class="n">key</span><span class="p">),</span> <span class="n">m_prev</span><span class="p">(</span><span class="n">OutOfListMarker</span><span class="p">),</span> <span class="n">m_next</span><span class="p">(</span><span class="n">nullptr</span><span class="p">)</span>
+    <span class="p">{}</span>
+
+    <span class="n">TKey</span> <span class="n">m_key</span><span class="p">;</span>
+    <span class="n">ListNode</span><span class="o">*</span> <span class="n">m_prev</span><span class="p">;</span>
+    <span class="n">ListNode</span><span class="o">*</span> <span class="n">m_next</span><span class="p">;</span>
+
+    <span class="n">bool</span> <span class="n">isInList</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">m_prev</span> <span class="o">!=</span> <span class="n">OutOfListMarker</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+
+  <span class="k">static</span> <span class="n">ListNode</span><span class="o">*</span> <span class="k">const</span> <span class="n">OutOfListMarker</span><span class="p">;</span>
+</code></pre></div></div> <h3 id="hashmap">HashMap</h3> <p>Key is <code class="language-plaintext highlighter-rouge">key</code>, value include object (<code class="language-plaintext highlighter-rouge">m_value</code>) and node (<code class="language-plaintext highlighter-rouge">m_listNode</code>).</p> <p>Use Intel TBB <code class="language-plaintext highlighter-rouge">concurrent_hash_map</code> as Hash Table.</p> <p>Note that <code class="language-plaintext highlighter-rouge">const_accessor</code> and <code class="language-plaintext highlighter-rouge">accessor</code> are different. (generally read lock v.s write lock here).</p> <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">struct</span> <span class="n">HashMapValue</span> <span class="p">{</span>
+    <span class="n">HashMapValue</span><span class="p">()</span>
+      <span class="o">:</span> <span class="n">m_listNode</span><span class="p">(</span><span class="n">nullptr</span><span class="p">)</span>
+    <span class="p">{}</span>
+
+    <span class="n">HashMapValue</span><span class="p">(</span><span class="k">const</span> <span class="n">TValue</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">,</span> <span class="n">ListNode</span><span class="o">*</span> <span class="n">node</span><span class="p">)</span>
+      <span class="o">:</span> <span class="n">m_value</span><span class="p">(</span><span class="n">value</span><span class="p">),</span> <span class="n">m_listNode</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+    <span class="p">{}</span>
+
+    <span class="n">TValue</span> <span class="n">m_value</span><span class="p">;</span>
+    <span class="n">ListNode</span><span class="o">*</span> <span class="n">m_listNode</span><span class="p">;</span>
+  <span class="p">};</span>
+
+  <span class="k">typedef</span> <span class="n">tbb</span><span class="o">::</span><span class="n">concurrent_hash_map</span><span class="o">&lt;</span><span class="n">TKey</span><span class="p">,</span> <span class="n">HashMapValue</span><span class="p">,</span> <span class="n">THash</span><span class="o">&gt;</span> <span class="n">HashMap</span><span class="p">;</span>
+  <span class="k">typedef</span> <span class="kr">typename</span> <span class="n">HashMap</span><span class="o">::</span><span class="n">const_accessor</span> <span class="n">HashMapConstAccessor</span><span class="p">;</span>
+  <span class="k">typedef</span> <span class="kr">typename</span> <span class="n">HashMap</span><span class="o">::</span><span class="n">accessor</span> <span class="n">HashMapAccessor</span><span class="p">;</span>
+  <span class="k">typedef</span> <span class="kr">typename</span> <span class="n">HashMap</span><span class="o">::</span><span class="n">value_type</span> <span class="n">HashMapValuePair</span><span class="p">;</span>
+  <span class="k">typedef</span> <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">TKey</span><span class="p">,</span> <span class="n">TValue</span><span class="o">&gt;</span> <span class="n">SnapshotValue</span><span class="p">;</span>
+</code></pre></div></div> <p>Question: Try to use other hash table implementations (like CLHT), and test.</p> <h3 id="global-variables">Global Variables</h3> <p>Note that <code class="language-plaintext highlighter-rouge">m_size</code> is <strong>approximately</strong> equal to the number of elements in the container, and is <strong>atomic</strong>. The gap comes from concurrency, and does not become larger with time.</p> <p>For the LRU List, the “head” is the most-recently used node, and the “tail” is the least-recently used node. The list mutex must be held during both read and write.</p> <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="cm">/**
+   * The maximum number of elements in the container.
+   */</span>
+  <span class="kt">size_t</span> <span class="n">m_maxSize</span><span class="p">;</span>
+
+  <span class="cm">/**
+   * This atomic variable is used to signal to all threads whether or not
+   * eviction should be done on insert. It is approximately equal to the
+   * number of elements in the container.
+   */</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">atomic</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;</span> <span class="n">m_size</span><span class="p">;</span>
+
+  <span class="cm">/**
+   * The underlying TBB hash map.
+   */</span>
+  <span class="n">HashMap</span> <span class="n">m_map</span><span class="p">;</span>
+
+  <span class="cm">/**
+   * The linked list. The "head" is the most-recently used node, and the
+   * "tail" is the least-recently used node. The list mutex must be held
+   * during both read and write.
+   */</span>
+  <span class="n">ListNode</span> <span class="n">m_head</span><span class="p">;</span>
+  <span class="n">ListNode</span> <span class="n">m_tail</span><span class="p">;</span>
+  <span class="k">typedef</span> <span class="n">std</span><span class="o">::</span><span class="n">mutex</span> <span class="n">ListMutex</span><span class="p">;</span>
+  <span class="n">ListMutex</span> <span class="n">m_listMutex</span><span class="p">;</span>
+</code></pre></div></div> <p>Question: spinlock can perform different. Replace <code class="language-plaintext highlighter-rouge">std::mutex</code> and test.</p> <p>Question: <code class="language-plaintext highlighter-rouge">m_head</code> and <code class="language-plaintext highlighter-rouge">m_tail</code> can be organized into one marker. Try? Hint: <a href="https://github.com/facebook/rocksdb/blob/main/cache/lru_cache.cc" target="_blank" rel="noopener noreferrer">RocksDB LRU Cache</a></p> <h2 id="apis">APIs</h2> <p>I will highlight <code class="language-plaintext highlighter-rouge">find()</code>, <code class="language-plaintext highlighter-rouge">insert()</code> and <code class="language-plaintext highlighter-rouge">evict()</code> in this section. At the end of this part, I will attach my own implementation of <code class="language-plaintext highlighter-rouge">delete()</code>. Welcome discussion!</p> <h3 id="api-overview">API Overview</h3> <p>Note that：</p> <ul> <li> <code class="language-plaintext highlighter-rouge">find()</code> return value by filling ConstAccessor</li> <li> <code class="language-plaintext highlighter-rouge">insert()</code> will copy key and value (from input), then insert into hash table</li> <li> <code class="language-plaintext highlighter-rouge">insert()</code> will not update/replace the same key, but return false</li> <li> <code class="language-plaintext highlighter-rouge">delink()</code> and <code class="language-plaintext highlighter-rouge">pushFront()</code> should be used with lock (<code class="language-plaintext highlighter-rouge">m_listMutex</code>) when called</li> </ul> <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">public:</span>
+	<span class="cm">/**
+   * Find a value by key, and return it by filling the ConstAccessor, which
+   * can be default-constructed. Returns true if the element was found, false
+   * otherwise. Updates the eviction list, making the element the
+   * most-recently used.
+   */</span>
+  <span class="n">bool</span> <span class="nf">find</span><span class="p">(</span><span class="n">ConstAccessor</span><span class="o">&amp;</span> <span class="n">ac</span><span class="p">,</span> <span class="k">const</span> <span class="n">TKey</span><span class="o">&amp;</span> <span class="n">key</span><span class="p">);</span>
+
+  <span class="cm">/**
+   * Insert a value into the container. Both the key and value will be copied.
+   * The new element will put into the eviction list as the most-recently
+   * used.
+   *
+   * If there was already an element in the container with the same key, it
+   * will not be updated, and false will be returned. Otherwise, true will be
+   * returned.
+   */</span>
+  <span class="n">bool</span> <span class="nf">insert</span><span class="p">(</span><span class="k">const</span> <span class="n">TKey</span><span class="o">&amp;</span> <span class="n">key</span><span class="p">,</span> <span class="k">const</span> <span class="n">TValue</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">);</span>
+
+  <span class="cm">/**
+   * Clear the container. NOT THREAD SAFE -- do not use while other threads
+   * are accessing the container.
+   */</span>
+  <span class="kt">void</span> <span class="nf">clear</span><span class="p">();</span>
+
+  <span class="cm">/**
+   * Get the approximate size of the container. May be slightly too low when
+   * insertion is in progress.
+   */</span>
+  <span class="kt">size_t</span> <span class="nf">size</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">m_size</span><span class="p">.</span><span class="n">load</span><span class="p">();</span>
+  <span class="err">}</span>
+
+<span class="n">private</span><span class="o">:</span>
+  <span class="cm">/**
+   * Unlink a node from the list. The caller must lock the list mutex while
+   * this is called.
+   */</span>
+  <span class="kt">void</span> <span class="nf">delink</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">node</span><span class="p">);</span>
+
+  <span class="cm">/**
+   * Add a new node to the list in the most-recently used position. The caller
+   * must lock the list mutex while this is called.
+   */</span>
+  <span class="kt">void</span> <span class="nf">pushFront</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">node</span><span class="p">);</span>
+
+  <span class="cm">/**
+   * Evict the least-recently used item from the container. This function does
+   * its own locking.
+   */</span>
+  <span class="kt">void</span> <span class="nf">evict</span><span class="p">();</span>
+</code></pre></div></div> <h3 id="api-details">API details</h3> <h4 id="lru-list-initialization">LRU List initialization</h4> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">TKey</span><span class="p">,</span> <span class="k">class</span> <span class="nc">TValue</span><span class="p">,</span> <span class="k">class</span> <span class="nc">THash</span><span class="p">&gt;</span>
+<span class="n">ConcurrentLRUCache</span><span class="o">&lt;</span><span class="n">TKey</span><span class="p">,</span> <span class="n">TValue</span><span class="p">,</span> <span class="n">THash</span><span class="o">&gt;::</span>
+<span class="n">ConcurrentLRUCache</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">maxSize</span><span class="p">)</span>
+  <span class="o">:</span> <span class="n">m_maxSize</span><span class="p">(</span><span class="n">maxSize</span><span class="p">),</span> <span class="n">m_size</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+  <span class="n">m_map</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kr">thread</span><span class="o">::</span><span class="n">hardware_concurrency</span><span class="p">()</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span> <span class="c1">// it will automatically grow</span>
+<span class="p">{</span>
+  <span class="n">m_head</span><span class="p">.</span><span class="n">m_prev</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+  <span class="n">m_head</span><span class="p">.</span><span class="n">m_next</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">m_tail</span><span class="p">;</span>
+  <span class="n">m_tail</span><span class="p">.</span><span class="n">m_prev</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">m_head</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <h4 id="find">find()</h4> <p>Use read lock in hash table (<code class="language-plaintext highlighter-rouge">HashMapConstAccessor</code>) and <code class="language-plaintext highlighter-rouge">try_lock</code> for LRU List to weaken lock contention problem. If <code class="language-plaintext highlighter-rouge">lock</code> true, the hit item will be delinked from list then push back to the front of the list, called promotion.</p> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">TKey</span><span class="p">,</span> <span class="k">class</span> <span class="nc">TValue</span><span class="p">,</span> <span class="k">class</span> <span class="nc">THash</span><span class="p">&gt;</span>
+<span class="kt">bool</span> <span class="n">ConcurrentLRUCache</span><span class="o">&lt;</span><span class="n">TKey</span><span class="p">,</span> <span class="n">TValue</span><span class="p">,</span> <span class="n">THash</span><span class="o">&gt;::</span>
+<span class="n">find</span><span class="p">(</span><span class="n">ConstAccessor</span><span class="o">&amp;</span> <span class="n">ac</span><span class="p">,</span> <span class="k">const</span> <span class="n">TKey</span><span class="o">&amp;</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">HashMapConstAccessor</span><span class="o">&amp;</span> <span class="n">hashAccessor</span> <span class="o">=</span> <span class="n">ac</span><span class="p">.</span><span class="n">m_hashAccessor</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">m_map</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">hashAccessor</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Acquire the lock, but don't block if it is already held</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">ListMutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_listMutex</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">try_to_lock</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">lock</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ListNode</span><span class="o">*</span> <span class="n">node</span> <span class="o">=</span> <span class="n">hashAccessor</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">.</span><span class="n">m_listNode</span><span class="p">;</span>
+    <span class="c1">// The list node may be out of the list if it is in the process of being</span>
+    <span class="c1">// inserted or evicted. Doing this check allows us to lock the list for</span>
+    <span class="c1">// shorter periods of time.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">isInList</span><span class="p">())</span> <span class="p">{</span>
+      <span class="n">delink</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
+      <span class="n">pushFront</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">lock</span><span class="p">.</span><span class="n">unlock</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>I personally feel that it will be better to add some <code class="language-plaintext highlighter-rouge">assert()</code> for people who want to make code contributions to debug, like me :(</p> <p>Note that <code class="language-plaintext highlighter-rouge">delink()</code> need global variable <code class="language-plaintext highlighter-rouge">OutOfListMarker</code>, and <code class="language-plaintext highlighter-rouge">pushFront()</code> need global variable <code class="language-plaintext highlighter-rouge">m_head</code>.</p> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">TKey</span><span class="p">,</span> <span class="k">class</span> <span class="nc">TValue</span><span class="p">,</span> <span class="k">class</span> <span class="nc">THash</span><span class="p">&gt;</span>
+<span class="kr">inline</span> <span class="kt">void</span> <span class="n">ConcurrentLRUCache</span><span class="o">&lt;</span><span class="n">TKey</span><span class="p">,</span> <span class="n">TValue</span><span class="p">,</span> <span class="n">THash</span><span class="o">&gt;::</span>
+<span class="n">delink</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">ListNode</span><span class="o">*</span> <span class="n">prev</span> <span class="o">=</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">m_prev</span><span class="p">;</span>
+  <span class="n">ListNode</span><span class="o">*</span> <span class="n">next</span> <span class="o">=</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">m_next</span><span class="p">;</span>
+  <span class="n">prev</span><span class="o">-&gt;</span><span class="n">m_next</span> <span class="o">=</span> <span class="n">next</span><span class="p">;</span>
+  <span class="n">next</span><span class="o">-&gt;</span><span class="n">m_prev</span> <span class="o">=</span> <span class="n">prev</span><span class="p">;</span>
+  <span class="n">node</span><span class="o">-&gt;</span><span class="n">m_prev</span> <span class="o">=</span> <span class="n">OutOfListMarker</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">TKey</span><span class="p">,</span> <span class="k">class</span> <span class="nc">TValue</span><span class="p">,</span> <span class="k">class</span> <span class="nc">THash</span><span class="p">&gt;</span>
+<span class="kr">inline</span> <span class="kt">void</span> <span class="n">ConcurrentLRUCache</span><span class="o">&lt;</span><span class="n">TKey</span><span class="p">,</span> <span class="n">TValue</span><span class="p">,</span> <span class="n">THash</span><span class="o">&gt;::</span>
+<span class="n">pushFront</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">ListNode</span><span class="o">*</span> <span class="n">oldRealHead</span> <span class="o">=</span> <span class="n">m_head</span><span class="p">.</span><span class="n">m_next</span><span class="p">;</span>
+  <span class="n">node</span><span class="o">-&gt;</span><span class="n">m_prev</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">m_head</span><span class="p">;</span>
+  <span class="n">node</span><span class="o">-&gt;</span><span class="n">m_next</span> <span class="o">=</span> <span class="n">oldRealHead</span><span class="p">;</span>
+  <span class="n">oldRealHead</span><span class="o">-&gt;</span><span class="n">m_prev</span> <span class="o">=</span> <span class="n">node</span><span class="p">;</span>
+  <span class="n">m_head</span><span class="p">.</span><span class="n">m_next</span> <span class="o">=</span> <span class="n">node</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>Question: If there is no condition <code class="language-plaintext highlighter-rouge">isInList()</code> before <code class="language-plaintext highlighter-rouge">delink()</code>, what will happen?</p> <h4 id="insert--evict">insert() &amp; evict()</h4> <p><code class="language-plaintext highlighter-rouge">insert()</code> fails when key exists, or <code class="language-plaintext highlighter-rouge">m_map.insert()</code> return true. Note that at this time, accessor made a write lock on the bucket of the key.</p> <p><code class="language-plaintext highlighter-rouge">evict()</code> is only used by <code class="language-plaintext highlighter-rouge">insert()</code>, thus should be looked inside when making use of <code class="language-plaintext highlighter-rouge">evict()</code>.</p> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">TKey</span><span class="p">,</span> <span class="k">class</span> <span class="nc">TValue</span><span class="p">,</span> <span class="k">class</span> <span class="nc">THash</span><span class="p">&gt;</span>
+<span class="kt">bool</span> <span class="n">ConcurrentLRUCache</span><span class="o">&lt;</span><span class="n">TKey</span><span class="p">,</span> <span class="n">TValue</span><span class="p">,</span> <span class="n">THash</span><span class="o">&gt;::</span>
+<span class="n">insert</span><span class="p">(</span><span class="k">const</span> <span class="n">TKey</span><span class="o">&amp;</span> <span class="n">key</span><span class="p">,</span> <span class="k">const</span> <span class="n">TValue</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Insert into the CHM</span>
+  <span class="n">ListNode</span><span class="o">*</span> <span class="n">node</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+  <span class="n">HashMapAccessor</span> <span class="n">hashAccessor</span><span class="p">;</span>
+  <span class="n">HashMapValuePair</span> <span class="n">hashMapValue</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">HashMapValue</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">node</span><span class="p">));</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">m_map</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">hashAccessor</span><span class="p">,</span> <span class="n">hashMapValue</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">delete</span> <span class="n">node</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Evict if necessary, now that we know the hashmap insertion was successful.</span>
+  <span class="kt">size_t</span> <span class="n">size</span> <span class="o">=</span> <span class="n">m_size</span><span class="p">.</span><span class="n">load</span><span class="p">();</span>
+  <span class="kt">bool</span> <span class="n">evictionDone</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">size</span> <span class="o">&gt;=</span> <span class="n">m_maxSize</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// The container is at (or over) capacity, so eviction needs to be done.</span>
+    <span class="c1">// Do not decrement m_size, since that would cause other threads to</span>
+    <span class="c1">// inappropriately omit eviction during their own inserts.</span>
+    <span class="n">evict</span><span class="p">();</span>
+    <span class="n">evictionDone</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// Note that we have to update the LRU list before we increment m_size, so</span>
+  <span class="c1">// that other threads don't attempt to evict list items before they even</span>
+  <span class="c1">// exist.</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">ListMutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_listMutex</span><span class="p">);</span>
+  <span class="n">pushFront</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
+  <span class="n">lock</span><span class="p">.</span><span class="n">unlock</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">evictionDone</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="n">m_size</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">size</span> <span class="o">&gt;</span> <span class="n">m_maxSize</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// It is possible for the size to temporarily exceed the maximum if there is</span>
+    <span class="c1">// a heavy insert() load, once only as the cache fills. In this situation,</span>
+    <span class="c1">// we have to be careful not to have every thread simultaneously attempt to</span>
+    <span class="c1">// evict the extra entries, since we could end up underfilled. Instead we do</span>
+    <span class="c1">// a compare-and-exchange to acquire an exclusive right to reduce the size</span>
+    <span class="c1">// to a particular value.</span>
+    <span class="c1">//</span>
+    <span class="c1">// We could continue to evict in a loop, but if there are a lot of threads</span>
+    <span class="c1">// here at the same time, that could lead to spinning. So we will just evict</span>
+    <span class="c1">// one extra element per insert() until the overfill is rectified.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">m_size</span><span class="p">.</span><span class="n">compare_exchange_strong</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="p">{</span>
+      <span class="n">evict</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>Question: Will it be possible for <code class="language-plaintext highlighter-rouge">evict()</code> to fail internally?</p> <p>Question: Why <code class="language-plaintext highlighter-rouge">m_size.compare_exchange_strong(size, size - 1)</code>? Is there any other way to implement?</p> <p>Question: Why in this order: insert hash table -&gt; evict object -&gt; pushFront node? What could be wrong with pushFront ahead of insert hash table?</p> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">TKey</span><span class="p">,</span> <span class="k">class</span> <span class="nc">TValue</span><span class="p">,</span> <span class="k">class</span> <span class="nc">THash</span><span class="p">&gt;</span>
+<span class="kt">void</span> <span class="n">ConcurrentLRUCache</span><span class="o">&lt;</span><span class="n">TKey</span><span class="p">,</span> <span class="n">TValue</span><span class="p">,</span> <span class="n">THash</span><span class="o">&gt;::</span>
+<span class="n">evict</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">ListMutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_listMutex</span><span class="p">);</span>
+  <span class="n">ListNode</span><span class="o">*</span> <span class="n">moribund</span> <span class="o">=</span> <span class="n">m_tail</span><span class="p">.</span><span class="n">m_prev</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">moribund</span> <span class="o">==</span> <span class="o">&amp;</span><span class="n">m_head</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// List is empty, can't evict</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">delink</span><span class="p">(</span><span class="n">moribund</span><span class="p">);</span>
+  <span class="n">lock</span><span class="p">.</span><span class="n">unlock</span><span class="p">();</span>
+
+  <span class="n">HashMapAccessor</span> <span class="n">hashAccessor</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">m_map</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">hashAccessor</span><span class="p">,</span> <span class="n">moribund</span><span class="o">-&gt;</span><span class="n">m_key</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// Presumably unreachable</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">m_map</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">hashAccessor</span><span class="p">);</span>
+  <span class="k">delete</span> <span class="n">moribund</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>Question: When will <code class="language-plaintext highlighter-rouge">moribund == &amp;m_head</code> become true?</p> <p>Question: Will <code class="language-plaintext highlighter-rouge">!m_map.find(hashAccessor, moribund-&gt;m_key)</code> become true?</p> <h3 id="add-support-of-delete_key">Add support of delete_key()</h3> <p>It seems easy to implement <code class="language-plaintext highlighter-rouge">delete_key()</code> since it is similar to <code class="language-plaintext highlighter-rouge">insert()</code>, but there is one thing to take care.</p> <p><code class="language-plaintext highlighter-rouge">delete_key()</code> should do <code class="language-plaintext highlighter-rouge">m_size--</code> but <code class="language-plaintext highlighter-rouge">evict()</code> shouldn’t do <code class="language-plaintext highlighter-rouge">m_size++</code>, since insert maintain the consistency of <code class="language-plaintext highlighter-rouge">m_size</code>. Therefore, if user move <code class="language-plaintext highlighter-rouge">evict()</code> into public and calls it, there should add code like <code class="language-plaintext highlighter-rouge">m_size--</code>.</p> <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">TKey</span><span class="p">,</span> <span class="k">class</span> <span class="nc">TValue</span><span class="p">,</span> <span class="k">class</span> <span class="nc">THash</span><span class="p">&gt;</span>
+<span class="kt">void</span> <span class="n">ConcurrentLRUCache</span><span class="o">&lt;</span><span class="n">TKey</span><span class="p">,</span> <span class="n">TValue</span><span class="p">,</span> <span class="n">THash</span><span class="o">&gt;::</span><span class="n">delete_key</span><span class="p">(</span><span class="k">const</span> <span class="n">TKey</span><span class="o">&amp;</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">HashMapAccessor</span> <span class="n">hashAccessor</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">m_map</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">hashAccessor</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">ListMutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">m_listMutex</span><span class="p">);</span>
+  <span class="n">ListNode</span><span class="o">*</span> <span class="n">node</span> <span class="o">=</span> <span class="n">hashAccessor</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">.</span><span class="n">m_listNode</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">isInList</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">delink</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
+  <span class="n">lock</span><span class="p">.</span><span class="n">unlock</span><span class="p">();</span>
+
+  <span class="n">m_map</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">hashAccessor</span><span class="p">);</span>
+  <span class="k">delete</span> <span class="n">node</span><span class="p">;</span>
+  <span class="n">m_size</span><span class="o">--</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>Question: Can accessor be replaced into const accessor?</p> </article><div id="disqus_thread"></div> <script type="text/javascript">var disqus_shortname="Ziyue",disqus_identifier="/blog/2022/Introduction to HHVM LRU Cache",disqus_title="Introduction to HHVM LRU Cache";!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//"+disqus_shortname+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)}();</script> <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript" target="_blank" rel="noopener noreferrer">comments powered by Disqus.</a> </noscript> </div> </div> <footer class="fixed-bottom"> <div class="container mt-0"> © Copyright 2025 Ziyue Qiu. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>. Last updated: November 29, 2025. </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script> <script defer src="/assets/js/masonry.js" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js"></script> <script defer src="/assets/js/common.js"></script> <script type="text/javascript">window.MathJax={tex:{tags:"ams"}};</script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script> <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> </body> </html>
