@@ -4,8 +4,28 @@
 
 "Li":
   - firstname: ["Cheng"]
-    url: http://staff.ustc.edu.cn/~chengli7/
+    url: https://mr-cheng-li.github.io/
 
 "Ma":
   - firstname: ["Xiaosong"]
-    url: https://www.hbku.edu.qa/en/staff/dr-xiaosong-ma
+    url: https://mbzuai.ac.ae/study/faculty/xiaosong-ma/
+
+"Harchol-Balter":
+  - firstname: ["Mor"]
+    url: https://www.cs.cmu.edu/~harchol/
+
+"Vinayak":
+  - firstname: ["Rashmi", "Rashmi K.", "K. V."]
+    url: https://www.cs.cmu.edu/~rvinayak/
+
+"Rashmi":
+  - firstname: ["K. V.", "K.V.", "K."]
+    url: https://www.cs.cmu.edu/~rvinayak/
+
+"Ganger":
+  - firstname: ["Gregory R.", "Gregory", "Greg"]
+    url: https://users.ece.cmu.edu/~ganger/
+
+"Amvrosiadis":
+  - firstname: ["George"]
+    url: https://users.ece.cmu.edu/~gamvrosi/

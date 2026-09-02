@@ -2,7 +2,7 @@
 layout: page
 permalink: /repositories/
 title: repositories
-description: Not a coding person :(
+description:
 nav: true
 nav_order: 3
 ---
@@ -10,7 +10,7 @@ nav_order: 3
 ## GitHub users
 
 {% if site.data.repositories.github_users %}
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
+<div class="repo-grid">
   {% for user in site.data.repositories.github_users %}
     {% include repository/repo_user.html username=user %}
   {% endfor %}
@@ -22,7 +22,7 @@ nav_order: 3
 ## GitHub Repositories
 
 {% if site.data.repositories.github_repos %}
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
+<div class="repo-grid">
   {% for repo in site.data.repositories.github_repos %}
     {% include repository/repo.html repository=repo %}
   {% endfor %}

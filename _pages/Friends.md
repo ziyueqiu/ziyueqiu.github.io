@@ -3,8 +3,9 @@ layout: page
 permalink: /friend/
 title: Friends
 description: Fortunate to be friends with them :)
-nav: true
+nav: false
 nav_order: 6
+published: false  # hidden from the site; content kept
 ---
 
 

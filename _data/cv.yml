@@ -3,115 +3,124 @@
   contents:
     - name: Full Name
       value: Ziyue Qiu
-    - name: Date of Birth
-      value: Jan 2002
     - name: Languages
       value: English, Mandarin
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: Carnegie Mellon University (CMU), Pittsburgh, USA
-      year: 2022
+    - title: PhD in Computer Science
+      institution: Carnegie Mellon University (CMU), Pittsburgh, PA, USA
+      year: 2022 - 2027
       description:
-        - Computer Science
-        - Advisor(s) Greg Ganger and George Amvrosiadis
-    - title:  Bachelor
-      institution: University of Science and Technology of China (USTC), Hefei, China
-      year: 2018
+        - Expected graduation Aug 2027
+        - Advisors Greg Ganger and George Amvrosiadis
+    - title: MS in Computer Science (Research)
+      institution: Carnegie Mellon University (CMU), Pittsburgh, PA, USA
+      year: 2022 - 2025
+    - title: Bachelor of Engineering
+      institution: University of Science and Technology of China (USTC), Anhui, China
+      year: 2018 - 2022
       description:
         - Computer Science and Technology
         - Advisor Cheng Li
-        - GPA 3.92/4.3
+        - "GPA 3.92/4.3 (90.7/100), ranking 9/251 (top 4%)"
         - title: Special Honors
           contents:
             - Special Class for the Gifted Young (under 16 years old)
-            - Hua Xia Talent Program
+            - Hua Xia Talent Program in Computer Science and Technology
 
 - title: Experience
   type: time_table
   contents:
-    # - title: Professor of Theoretical Physics
-    #   institution: Institute for Advanced Study, Princeton University
-    #   year: 1933 - 1955
-    #   description:
-    #     - Description 1.
-    #     - Description 2.
-    #     - title: Description 3.
-    #       contents:
-    #         - Sub-description 1.
-    #         - Sub-description 2.
-    - title: Research Intern
+    - title: Student Researcher
+      institution: Systems Research Group (SRG), Google
+      year: 2026 - now
+    - title: Software Engineering Intern
       institution: Data Infrastructure Team, Uber
-      year: 2023-present
+      year: 2023 - 2026
       description:
-        - Working on Moirai and a follow-up project, optimizing both performance and cost on Uber infrastructure
+        - Evaluating and refining Cloudlake's efficiency on Uber's platform
     - title: Research Intern
       institution: System Group, Microsoft Research Asia
-      year: 2021-2022
+      year: 2021 - 2022
       description:
         - Worked on caching project
-
     - title: Undergraduate Researcher
       institution: Advanced Data Systems Laboratory (ADSL), USTC, Hefei, China
-      year: 2021-2022
+      year: 2021 - 2022
 
-
-# - title: Open Source Projects
-#   type: time_table
-#   contents:
-#     - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-#       year: 2015-now
-#       description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
-
-- title: Conference talks
+- title: Talks
   type: time_table
   contents:
+    - year: 2026
+      items:
+        - Presented "Demystifying and Improving Lazy Promotion in Cache Eviction" at VLDB 2026
+        - Invited to present Uber work at the Microsoft Storage Experts Community (STEC) Tech Talk Series
     - year: 2025
-      items: 
-        - Presented “Moirai - Optimizing Placement of Data and Compute in Hybrid Clouds.” at SOSP 2025 (virtual)
+      items:
+        - Presented "Moirai - Optimizing Placement of Data and Compute in Hybrid Clouds" at SOSP 2025 (virtual)
     - year: 2024
-      items: 
-        - Co-presented “Data Caching for Enterprise-Grade Petabyte-Scale OLAP.” at USENIX ATC 2024
+      items:
+        - Invited to present Uber work at the Salesforce Database Team reading group
+        - Co-presented "Data Caching for Enterprise-Grade Petabyte-Scale OLAP" at USENIX ATC 2024
     - year: 2023
-      items: 
-        - Presented “FrozenHot Cache - Rethinking Cache Management for Modern Hardware.” at EuroSys 2024
+      items:
+        - Presented "FrozenHot Cache - Rethinking Cache Management for Modern Hardware" at EuroSys 2023
 
 - title: Services
   type: time_table
   contents:
+    - year: 2025
+      items:
+        - External reviewer - ICDCS 2025
     - year: 2024
-      items: 
+      items:
         - Artifact Evaluation committee - SIGCOMM 2024, EuroSys 2025, SIGCOMM 2025, FAST 2026, NSDI 2026
+
+- title: Teaching
+  type: time_table
+  contents:
+    - year: 2026
+      items:
+        - Teaching Assistant, 15-712 Advanced and Distributed Operating Systems (Fall), CMU
+    - year: 2024
+      items:
+        - Teaching Assistant, 18-746 Storage Systems (Fall), CMU
+    - year: 2021
+      items:
+        - Teaching Assistant, Mathematical Logic (Spring), USTC
 
 - title: Honors and Awards
   type: time_table
   contents:
+    - year: 2026
+      items:
+        - Best Paper Honorable Mention, VLDB 2026
+    - year: 2024
+      items:
+        - Best Student Paper Award, ValueTools 2024
+    - year: Travel
+      items:
+        - Travel grants - EuroSys 2023, HotOS 2023, USENIX ATC 2024, SOSP 2024
     - year: 2021
-      items: 
+      items:
         - China National Scholarship (Top 1%)
     - year: 2020
-      items: 
+      items:
         - SGY Sihua Scholarship (4/50)
-        - Hua Xia Talent Program First Prize Scholarship
+        - Hua Xia Talent Program First Prize Scholarship (12/251 students majoring in CS)
         - Zhong Hai Memorial Scholarship (2/200)
     - year: 2019
-      items: 
-        - SGY Class of 87 Innovation Scholarship (10/1,000) 
-        - Chen Guoliang Scholarship (Top 10%) 
+      items:
+        - SGY Class of 87 Innovation Scholarship (10/1,000)
+        - Chen Guoliang Scholarship (Top 10%)
 
-# - title: Academic Interests
-#   type: nested_list
-#   contents:
-#     - title: Topic 1.
-#       items: 
-#         - Description 1.
-#         - Description 2.
-#     - title: Topic 2.
-#       items:
-#         - Description 1.
-#         - Description 2.
+- title: Skills
+  type: list
+  contents:
+    - Adept in Assembly Language, C/C++, Python, Verilog (3-year experience)
+    - Proficient in Java, JavaScript
 
 - title: Other Interests
   type: list

@@ -111,9 +111,9 @@ bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: ROLL ! # blog_name will be displayed in your blog page
+blog_name: Reading Notes # blog_name will be displayed in your blog page
 blog_nav_title: blog # your blog must have a title for it to be displayed in the nav bar
-blog_description: Experience in Application to PhD program, Caching, etc
+blog_description: Notes on caching, cloud economics, and distributed systems papers — plus the occasional post about the PhD path
 permalink: /blog/:year/:title/
 
 # Pagination

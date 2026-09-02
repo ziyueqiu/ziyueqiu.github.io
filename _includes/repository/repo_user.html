@@ -1,6 +1,10 @@
-<div class="repo p-2 text-center">
-  <a href="https://github.com/{{ include.username }}">
-    <img class="repo-img-light w-100" alt="{{ include.username }}" src="https://github-readme-stats.vercel.app/api/?username={{ include.username }}&theme={{ site.repo_theme_light }}&show_icons=true">
-    <img class="repo-img-dark w-100" alt="{{ include.username }}" src="https://github-readme-stats.vercel.app/api/?username={{ include.username }}&theme={{ site.repo_theme_dark }}&show_icons=true">
-  </a>
-</div>
+{%- comment -%}
+Static GitHub profile card; see repo.html.
+{%- endcomment -%}
+<a class="repo-card" href="https://github.com/{{ include.username }}">
+  <span class="repo-card-title">
+    <i class="fab fa-github" aria-hidden="true"></i>
+    <span class="repo-card-name">{{ include.username }}</span>
+  </span>
+  <span class="repo-card-desc">GitHub profile</span>
+</a>

@@ -1,11 +1,18 @@
 github_users:
   - ziyueqiu
 
+# Each entry is either "owner/name", or a mapping with an optional description
+# that is rendered under the repository name.
 github_repos:
-  - uber/Moirai-SOSP25-logs
-  - uber/Moirai-SOSP25-code
-  - uber-research/presto-HDFS-read-data
-  - ziyueqiu/FrozenHot
-  - ziyueqiu/x-dontpanic
-  - ziyueqiu/USTC-CS-Resources
-
+  - repo: uber/Moirai-SOSP25-logs
+    description: Traces for Moirai (SOSP '25)
+  - repo: uber/Moirai-SOSP25-code
+    description: Artifact for Moirai (SOSP '25)
+  - repo: uber-research/presto-HDFS-read-data
+    description: Traces for Macaron (SOSP '24)
+  - repo: ziyueqiu/FrozenHot
+    description: Artifact for FrozenHot Cache (EuroSys '23)
+  - repo: ziyueqiu/x-dontpanic
+    description: team dontpanic in ustc-osh-2020
+  - repo: ziyueqiu/USTC-CS-Resources
+    description: USTC 18 计算机学院 个人资源分享

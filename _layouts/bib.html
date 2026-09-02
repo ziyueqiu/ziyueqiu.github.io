@@ -107,9 +107,9 @@
 
           <!-- Journal/Book title and date -->
           {% if entry.type == "article" -%}
-            {%- capture entrytype -%}<em>{{entry.journal}}</em>{%- endcapture -%}
-          {%- elsif ["inproceedings", "incollection"] contains entry.type -%}
-            {%- capture entrytype -%}<em>In {{entry.booktitle}}</em> {%- endcapture -%}
+            {%- capture entrytype -%}<em>{{entry.journal}}{%- if entry.series -%}{%- unless entry.journal contains entry.series %} ({{entry.series}}){% endunless -%}{%- endif -%}</em>{%- endcapture -%}
+          {%- elsif entry.type == "inproceedings" or entry.type == "incollection" -%}
+            {%- capture entrytype -%}<em>In {{entry.booktitle}}{%- if entry.series -%}{%- unless entry.booktitle contains entry.series %} ({{entry.series}}){% endunless -%}{%- endif -%}</em> {%- endcapture -%}
           {%- else -%}
             {%- capture entrytype -%}{%- endcapture -%}
           {%- endif -%}
@@ -123,6 +123,11 @@
           <div class="periodical">
             {{ periodical | strip }}
           </div>
+          {%- if entry.award %}
+          <div class="award-line">
+            <i class="fas fa-award" aria-hidden="true"></i><span>{{ entry.award }}</span>
+          </div>
+          {%- endif %}
         {%- endif %}
         
           <!-- Links/Buttons -->
@@ -144,6 +149,13 @@
             <a href="{{ entry.pdf }}" class="btn btn-sm z-depth-0" role="button">PDF</a>
             {%- else -%}
             <a href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">PDF</a>
+            {%- endif %}
+          {%- endif %}
+          {%- if entry.data %}
+            {% if entry.data contains '://' -%}
+            <a href="{{ entry.data }}" class="btn btn-sm z-depth-0" role="button">Data</a>
+            {%- else -%}
+            <a href="{{ entry.data | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">Data</a>
             {%- endif %}
           {%- endif %}
           {%- if entry.supp %}
