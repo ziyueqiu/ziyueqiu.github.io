@@ -69,7 +69,7 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 
 github_username: ziyueqiu # your GitHub user name
 gitlab_username: # your GitLab user name
-twitter_username: ziyue_qiu # your Twitter handle
+twitter_username: # your Twitter handle
 linkedin_username: ziyue-qiu-a84446226 # your LinkedIn user name
 scholar_userid: XPpKrNgAAAAJ # your Google Scholar ID
 semanticscholar_id: # your Semantic Scholar ID
@@ -90,7 +90,7 @@ spotify_id: # your spotify id
 pinterest_id: # your pinterest id
 unsplash_id: # your unsplash id
 instagram_id: # your instagram id
-facebook_id: 100085549112788 # your facebook id
+facebook_id: # your facebook id
 discord_id:  # your discord id (18-digit unique numerical identifier)
 telegram_id: dopanic # your telegram id
 
